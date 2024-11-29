@@ -1,5 +1,20 @@
+:root {
+    --primary: #32012F;
+    --secondary: #F97300;
+    --accent: #524C42;
+
+    --background: #FFFFFF;
+    --surface: #FFFFFF;
+    --text: #32012F;
+    --text-light: rgba(255, 255, 255, 0.7);
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+}
+
 .banner {
-    background-color: #32012F;
+    background-color: var(--primary);
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -126,7 +141,7 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #32012F;
+    border-color: var(--primary);
 }
 
 .password-toggle {
@@ -159,7 +174,7 @@ input:focus {
 }
 
 .sign-in-btn:hover {
-    background-color: #524C42;
+    background-color: var(--secondary);
 }
 
 .signup-text {
