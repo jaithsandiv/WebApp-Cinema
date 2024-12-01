@@ -50,7 +50,7 @@
         </form>
 
         <p class="signup-text">
-            Don't have an account? <a href="#" class="signup-link">Sign up</a>
+            Don't have an account? <a href="signup.jsp" class="signup-link">Sign up</a>
         </p>
     </div>
 </div>
