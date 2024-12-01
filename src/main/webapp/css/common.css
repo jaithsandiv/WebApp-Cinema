@@ -150,6 +150,49 @@ footer {
 .footer-logo:hover {
     color: var(--secondary);
 }
+
+.disclaimer-content {
+    line-height: 1.8;
+    color: #333;
+}
+        
+.disclaimer-content p {
+    margin-bottom: 1.5rem;
+}
+
+.banner {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.terms-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 1.5rem;
+}
+.terms-section {
+    margin-bottom: 2.5rem;
+}
+.terms-section h2 {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.terms-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
 @media (max-width: 991.98px) {
     .navbar-nav {
         padding-top: 1rem;

@@ -22,7 +22,7 @@
                     <ul class="footer-links">
                         <li><a href="/movies">Movies</a></li>
                         <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/theatres">Theatres</a></li>
                     </ul>
                 </div>
 
@@ -30,10 +30,9 @@
                 <div class="col-md-2 mb-4 mb-md-0">
                     <h5>HELP & SUPPORT</h5>
                     <ul class="footer-links">
-                        <li><a href="/faqs">FAQs</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/support">Contact Support</a></li>
+                        <li><a href="tconditions.jsp">Terms and Conditions</a></li>
+                        <li><a href="disclaimer.jsp">Disclaimer</a></li>
+                        <li><a href="/feedback">Customer Feedback</a></li>
                     </ul>
                 </div>
 
@@ -51,7 +50,7 @@
 
             <!-- Footer Bottom -->
             <div class="footer-bottom text-center">
-                <p>? 2024 ABC Cinema. All rights reserved.</p>
+                <p>&copy; 2024 ABC Cinema. All rights reserved.</p>
             </div>
         </div>
     </footer>

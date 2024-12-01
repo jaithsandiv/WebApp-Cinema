@@ -13,19 +13,6 @@
     --error: #EF4444;
 }
 
-.banner {
-    background-color: var(--primary);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
 .banner p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
@@ -134,7 +121,7 @@ input {
     width: 100%;
     padding: 12px;
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    border-radius: 7px;
     font-size: 16px;
     transition: border-color 0.2s;
 }
@@ -166,7 +153,7 @@ input:focus {
     background-color: #32012F;
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: 7px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 24px;
@@ -192,3 +179,4 @@ input:focus {
 .signup-link:hover {
     text-decoration: underline;
 }
+
