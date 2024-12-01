@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-light me-2">Book Now</a>
+                        <a href="booking-selection.jsp" class="btn btn-outline-light me-2">Book Now</a>
                         <a href="signin.jsp" class="btn">Login</a>
                     </div>
                 </div>
