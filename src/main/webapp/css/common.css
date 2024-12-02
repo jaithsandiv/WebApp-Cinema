@@ -17,8 +17,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}   
-    
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -48,8 +48,8 @@ main {
 .nav-link, .btn-outline-light, .btn{
     color: white !important;
     transition: color 0.3s ease;
-}    
-        
+}
+
 .navbar-brand:hover, .nav-link:hover, .btn-outline-light:hover, .btn:hover{
     color: var(--secondary) !important;
 }
@@ -155,7 +155,7 @@ footer {
     line-height: 1.8;
     color: #333;
 }
-        
+
 .disclaimer-content p {
     margin-bottom: 1.5rem;
 }
@@ -207,4 +207,3 @@ footer {
         margin-bottom: 2rem;
     }
 }
-       

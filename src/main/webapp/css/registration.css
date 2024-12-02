@@ -13,104 +13,43 @@
     --error: #EF4444;
 }
 
+.banner {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 .banner p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto;
+    opacity: 0.9;
 }
 
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; /* Adjust padding */
-    max-width: 500px; /* Adjust width */
-    margin: 0 auto;
+.s-container {
+    max-width: 450px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-.container {
-    width: 100%;
-    max-width: 500px; /* Reduced from 400px */
-    padding: 10px; /* Add padding if needed */
-}
-
-h2 {
-    font-size: 32px;
-    margin-bottom: 24px;
-    font-weight: 600;
+.form-title {
     text-align: center;
-}
-
-.google-btn {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 50px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    cursor: pointer;
-    margin-bottom: 24px;
-    transition: background-color 0.2s;
-}
-
-.google-btn:hover {
-    background-color: #f5f5f5;
-}
-
-.divider {
-    text-align: center;
-    color: #666;
-    margin-bottom: 24px;
-    position: relative;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: calc(50% - 100px);
-    height: 1px;
-    background-color: #e0e0e0;
-}
-
-.divider::before {
-    left: 0;
-}
-
-.divider::after {
-    right: 0;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.password-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.forgot-link {
-    color: #000;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.forgot-link:hover {
-    text-decoration: underline;
+    margin-bottom: 0.5rem;
+    color: #333;
 }
 
 .input-wrapper {
@@ -119,11 +58,10 @@ label {
 
 input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 7px;
-    font-size: 16px;
-    transition: border-color 0.2s;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 input:focus {
@@ -133,50 +71,71 @@ input:focus {
 
 .password-toggle {
     position: absolute;
-    right: 12px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
+    color: #666;
+    font-size: 1.2rem;
 }
 
-.password-toggle svg {
-    width: 20px;
-    height: 20px;
-    fill: #666;
+.password-toggle:focus {
+    outline: 2px solid var(--primary);
+    border-radius: 4px;
 }
 
-.sign-in-btn {
+.name-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.submit-btn {
     width: 100%;
-    padding: 14px;
-    background-color: #32012F;
+    padding: 0.75rem;
+    background-color: var(--primary);
     color: white;
     border: none;
-    border-radius: 7px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    margin-top: 24px;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease;
 }
 
-.sign-in-btn:hover {
+.submit-btn:hover {
     background-color: var(--secondary);
 }
 
-.signup-text {
+.signup-link {
     text-align: center;
-    margin-top: 24px;
+    margin-top: 1rem;
     color: #666;
 }
 
-.signup-link {
-    color: #000;
+.signup-link a {
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
 }
 
-.signup-link:hover {
-    text-decoration: underline;
+.signup-link a:hover {
+    color: var(--secondary);
 }
 
+.login-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #32012F;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    color: #F97300;
+}
