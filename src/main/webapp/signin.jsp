@@ -4,11 +4,10 @@
 
 <!-- Include header with parameters -->
 <jsp:include page="jsp/header.jsp">
-    <jsp:param name="logo" value="./images/logotab.png" />
     <jsp:param name="title" value="ABC Cinema" />
     <jsp:param name="css" value="registration.css" />
-    <jsp:param name="activePage" value="home" />   
 </jsp:include>
+
 <!-- Page Content-->
 <div class="banner">
     <h1>Welcome to ABC Cinemas</h1>

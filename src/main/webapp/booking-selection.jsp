@@ -5,10 +5,8 @@
 
 <!-- Include header with parameters -->
 <jsp:include page="jsp/header.jsp">
-    <jsp:param name="logo" value="./images/logotab.png" />
     <jsp:param name="title" value="ABC Cinema" />
-    <jsp:param name="css" value="booking-selection.css" />
-    <jsp:param name="activePage" value="home" />   
+    <jsp:param name="css" value="booking-selection.css" /> 
 </jsp:include>
 
 <!-- Page specific content -->

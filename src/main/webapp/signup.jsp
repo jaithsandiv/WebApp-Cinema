@@ -4,10 +4,8 @@
 
 <!-- Include header with parameters -->
 <jsp:include page="jsp/header.jsp">
-    <jsp:param name="logo" value="./images/logotab.png" />
     <jsp:param name="title" value="ABC Cinema" />
     <jsp:param name="css" value="registration.css" />
-    <jsp:param name="activePage" value="home" />   
 </jsp:include>
 <!-- Page Content-->   
 <div class="banner">
@@ -17,7 +15,7 @@
 
 <div class="s-container">
     <h2 class="form-title">Sign up</h2>
-    <form>
+    <form action="SignupCTL" method="POST">
         <div class="name-fields">
             <div class="form-group">
                 <label for="firstName">First name</label>
