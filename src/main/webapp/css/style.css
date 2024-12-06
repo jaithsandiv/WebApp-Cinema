@@ -1,4 +1,33 @@
-
-.d-block {
-
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.carousel {
+    height: 550px;
+}
+.carousel-inner {
+    height: 100%;
+}
+.carousel-item {
+    height: 100%;
+}
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+@media (max-width: 768px) {
+    .carousel {
+        height: 400px;
+    }
+}
+@media (max-width: 576px) {
+    .carousel {
+        height: 300px;
+    }
 }
