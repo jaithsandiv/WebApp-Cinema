@@ -27,23 +27,16 @@
                 </tr>
             </thead>
             <tbody>
-                <%-- Example row; replace with dynamic data in Step 3 --%>
-                <tr class="completed">
-                    <td>14383</td>
-                    <td>Segway Tour of Washington, D.C.</td>
-                    <td>Tour</td>
-                    <td>€200.00</td>
-                    <td>Completed</td>
-                    <td><a href="details.jsp?id=14383">Details</a></td>
-                </tr>
-                <tr class="incomplete">
-                    <td>14386</td>
-                    <td>American Parks Trail</td>
-                    <td>Tour</td>
-                    <td>€150.00</td>
-                    <td>Incomplete</td>
-                    <td><a href="details.jsp?id=14386">Details</a></td>
-                </tr>
+                <c:forEach var="booking" items="${bookings}">
+                    <tr class="${booking.status.toLowerCase()}">
+                        <td>${booking.id}</td>
+                        <td>${booking.title}</td>
+                        <td>${booking.type}</td>
+                        <td>€${booking.cost}</td>
+                        <td>${booking.status}</td>
+                        <td><a href="details.jsp?id=${booking.id}">Details</a></td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
         <button id="loadMore">Load More</button>
