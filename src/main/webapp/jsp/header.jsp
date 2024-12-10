@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" href="images/logotab.png">
+        <link rel="icon" href="images/tablogo.png">
         <title>${param.title}</title>
         <!-- Bootstrap links CSS -->
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
