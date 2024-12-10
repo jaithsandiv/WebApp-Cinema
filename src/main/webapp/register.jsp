@@ -38,11 +38,11 @@
         <div class="name-fields">
             <div class="form-group">
                 <label for="firstName">First name</label>
-                <input type="text" id="firstname" name="firstName" required>
+                <input type="text" id="firstname" name="firstname" required>
             </div>
             <div class="form-group">
                 <label for="lastName">Last name</label>
-                <input type="text" id="lastname" name="lastName" required>
+                <input type="text" id="lastname" name="lastname" required>
             </div>
         </div>
         <div class="form-group">

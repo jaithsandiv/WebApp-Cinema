@@ -48,7 +48,6 @@ public class RegisterCTL extends HttpServlet {
         // Database logic directly in the servlet
         String sql = "INSERT INTO users (firstname, lastname, email, phone, password, role) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection con = JDBCDataSource.getConnection(); PreparedStatement ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
-response.sendError(HttpServletResponse.SC_BAD_REQUEST, "2");
             ps.setString(1, firstname);
             ps.setString(2, lastname);
             ps.setString(3, email);
