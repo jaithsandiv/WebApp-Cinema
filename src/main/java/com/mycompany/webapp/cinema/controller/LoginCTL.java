@@ -25,15 +25,15 @@ public class LoginCTL extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Retrieve login form parameters
-        String email = request.getParameter("email"); // For email
-        String password = request.getParameter("password");     // For password
+        String email = request.getParameter("email"); // Email
+        String password = request.getParameter("password");     // Password
 
         try (Connection con = JDBCDataSource.getConnection()) {
             // SQL query to validate user login
             String sql = "SELECT user_id, role FROM users WHERE email = ? AND password = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, email);
-            ps.setString(2, password); //Password hashing needs to be done
+            ps.setString(2, password); // Password needs to be hashed
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -43,7 +43,7 @@ public class LoginCTL extends HttpServlet {
                 session.setAttribute("role", rs.getString("role"));
 
                 // Redirect to the home page
-                response.sendRedirect("./index");
+                response.sendRedirect("./");
             } else {
                 // Login failed: Redirect back to login page with error message
                 response.sendRedirect("login?error=true");
