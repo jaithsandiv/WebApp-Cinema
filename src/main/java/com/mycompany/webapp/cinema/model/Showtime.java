@@ -1,10 +1,12 @@
 package com.mycompany.webapp.cinema.model;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class Showtime {
-    private int id;
+      private int id;
     private Movie movie; // Reference to Movie object
     private Theatre theatre; // Reference to Theatre object
     private String showDate;
@@ -61,5 +63,5 @@ public class Showtime {
     public void setShowTime(String showTime) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         this.showTime = format.parse(showTime);
-    }
+    }  
 }

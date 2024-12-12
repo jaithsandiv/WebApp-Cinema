@@ -1,0 +1,53 @@
+.showtime-button {
+    width: 120px;
+    margin: 5px;
+}
+.movie-header {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.movie-header:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.theatre-name {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.showtime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.loading {
+    text-align: center;
+    padding: 20px;
+}
+.showtime-button {
+  background-color: var(--surface);
+  color: var(--primary);
+  border-color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.showtime-button:hover {
+  background-color: var(--primary);
+  color: var(--surface);
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--surface);
+}
+.card-title {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: bold;
+}
+

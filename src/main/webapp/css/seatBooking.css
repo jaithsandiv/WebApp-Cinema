@@ -1,0 +1,16 @@
+.seat {
+    padding: 10px;
+    margin: 5px;
+}
+
+.active {
+    background-color: white;
+}
+
+.inactive {
+    background-color: gray;
+}
+
+.vip {
+    border: 2px solid gold;
+}

@@ -1,6 +1,5 @@
 package com.mycompany.webapp.cinema.utility;
 
-import java.sql.Connection;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -203,10 +202,6 @@ public class DataUtility {
         }
         return timeStamp;
 
-    }
-
-    public static Connection getConnection() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

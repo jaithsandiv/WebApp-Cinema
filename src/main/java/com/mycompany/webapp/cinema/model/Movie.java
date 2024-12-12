@@ -3,7 +3,9 @@ package com.mycompany.webapp.cinema.model;
 import java.sql.Date;
 import java.sql.Time;
 
+
 public class Movie {
+    
     private int id;
     private String title;
     private String description;

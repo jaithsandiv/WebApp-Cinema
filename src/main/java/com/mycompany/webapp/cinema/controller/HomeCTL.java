@@ -1,11 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.mycompany.webapp.cinema.controller;
 
-import com.mycompany.webapp.cinema.model.Movie;
-import com.mycompany.webapp.cinema.utility.JDBCDataSource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -80,7 +74,7 @@ public class HomeCTL extends HttpServlet {
 
         // Set both lists as request attributes
         request.setAttribute("nowshow", nowShowMovies);         // All movies
-        request.setAttribute("comingsoon", comingSoonMovies);
+        request.setAttribute("comingsoon", comingSoonMovies);*/
 
         // Forward to index.jsp once
         request.getRequestDispatcher("/index.jsp").forward(request, response);

@@ -1,7 +1,8 @@
 package com.mycompany.webapp.cinema.model;
 
+
 public class Theatre {
-    private int id;
+   private int id;
     private String name;
     private String location;
     private String image_path;
@@ -30,5 +31,5 @@ public class Theatre {
     }
     public void setImagePath(String image_path) {
         this.image_path = image_path;
-    }
+    }   
 }

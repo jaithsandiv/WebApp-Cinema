@@ -1,4 +1,47 @@
+/*.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+}
+.carousel {
+    height: 550px;
+}
+.carousel-inner {
+    height: 100%;
+}
+.carousel-item {
+    height: 100%;
+}
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+}
+.carousel-control-prev, .carousel-control-next {
+    width: 10%;
+}
+*/
+.card-link {
+    color: inherit;
+    text-decoration: none;
+}
+.card-link:hover .card {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+.card {
+    transition: all 0.3s ease;
+}
+.card-img-top {
+    height: 400px;
+    object-fit: cover;
+}
 
-.d-block {
-
+@media (max-width: 768px) {
+    .carousel {
+        height: 400px;
+    }
+}
+@media (max-width: 576px) {
+    .carousel {
+        height: 300px;
+    }
 }

@@ -9,7 +9,7 @@
     --text-light: rgba(255, 255, 255, 0.7);
 
     --success: #10B981;
-    --warning: #F59E0B;
+    --warning: #F50B0B;
     --error: #EF4444;
 }
 
@@ -45,7 +45,7 @@ main {
     font-size: 1.5rem;
 }
 
-.nav-link, .btn-outline-light, .btn{
+.nav-link, .btn-outline-light{
     color: white !important;
     transition: color 0.3s ease;
 }
