@@ -25,7 +25,7 @@ public class HomeCTL extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-/*
+
         List<Movie> nowShowMovies = new ArrayList<>();
         List<Movie> comingSoonMovies = new ArrayList<>();
 
