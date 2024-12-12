@@ -8,7 +8,6 @@
         <!-- Bootstrap links CSS -->
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
         <!-- Common CSS for the header and footer -->
         <link href="css/common.css" rel="stylesheet">
@@ -43,10 +42,18 @@
                             <a href="./booking-selection" class="btn btn-outline-light me-2">Book Now</a>
                             <c:choose>
                                 <c:when test="${sessionScope.user_id == null}">
-                                    <a href="./login" class="nav-link ${param.activePage == 'login' ? 'active' : ''}">Login</a>
+                                    <a href="./login" class="btn btn-outline-secondary ${param.activePage == 'login' ? 'active' : ''}">Login</a>
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="./account" class="nav-link ${param.activePage == 'account' ? 'active' : ''}">My Account</a>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            My Account
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="./account" ${param.activePage == 'account' ? 'active' : ''}>Account</a>
+                                            <a class="dropdown-item" href="./booking-history"${param.activePage == 'booking-history' ? 'active' : ''}>Booking History</a>
+                                        </div>
+                                    </div>
                                 </c:otherwise>
                             </c:choose>
                         </div>
