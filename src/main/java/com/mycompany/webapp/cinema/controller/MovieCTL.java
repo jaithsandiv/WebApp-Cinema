@@ -17,23 +17,18 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author USER
- */
-@WebServlet(name = "index.jsp", urlPatterns = {"/index"})
-public class HomeCTL extends HttpServlet {
+@WebServlet(name = "movies", urlPatterns = {"/movies"})
+public class MovieCTL extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        List<Movie> movies = new ArrayList<>();
         List<Movie> nowShowMovies = new ArrayList<>();
-        List<Movie> comingSoonMovies = new ArrayList<>();
 
         try (Connection conn = JDBCDataSource.getConnection()) {
-            String sqlNowShowing = "SELECT * FROM movies WHERE status='Now Showing'";
-            try (PreparedStatement stmt = conn.prepareStatement(sqlNowShowing)) {
+            String sql = "SELECT * FROM movies";
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                 ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
                     Movie movie = new Movie();
@@ -45,24 +40,7 @@ public class HomeCTL extends HttpServlet {
 //                    theatre.setLocation(rs.getString("location"));
                     movie.setImage_path(rs.getString("image_path"));
 //                    theatres.add(theatre);
-                    nowShowMovies.add(movie);
-                }
-            }
-
-            String sqlComingSoon = "SELECT * FROM movies WHERE status='Coming Soon'";
-            try (PreparedStatement stmt = conn.prepareStatement(sqlComingSoon)) {
-                ResultSet rs = stmt.executeQuery();
-                while (rs.next()) {
-                    Movie movie = new Movie();
-                    movie.setId(rs.getInt("movie_id"));
-                    movie.setTitle(rs.getString("title"));
-                    movie.setDescription(rs.getString("description"));
-//                    theatre.setId(rs.getInt("theatre_id"));
-//                    theatre.setName(rs.getString("name"));
-//                    theatre.setLocation(rs.getString("location"));
-                    movie.setImage_path(rs.getString("image_path"));
-//                    theatres.add(theatre);
-                    comingSoonMovies.add(movie);
+                    movies.add(movie);
                 }
             }
 
@@ -74,12 +52,14 @@ public class HomeCTL extends HttpServlet {
             request.setAttribute("error", "An unexpected error occurred.");
         }
 
-        // Set both lists as request attributes
-        request.setAttribute("nowshow", nowShowMovies);         // All movies
-        request.setAttribute("comingsoon", comingSoonMovies);
+//        request.setAttribute("moviess", movies);
+//        request.getRequestDispatcher("/movies.jsp").forward(request, response);
+//        
+         // Set both lists as request attributes
+        request.setAttribute("movies", movies);         // All movies
+     
 
         // Forward to index.jsp once
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/movies.jsp").forward(request, response);
     }
-
 }

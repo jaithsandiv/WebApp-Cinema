@@ -49,7 +49,7 @@
         </dependency>
         <dependency>
             <groupId>com.mycompany</groupId>
-            <artifactId>moviebooking</artifactId>
+            <artifactId>WebApp-Cinema</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>war</type>
         </dependency>
