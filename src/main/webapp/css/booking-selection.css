@@ -25,29 +25,28 @@
     padding: 20px;
 }
 .showtime-button {
-  background-color: var(--surface);
-  color: var(--primary);
-  border-color: var(--primary);
-  transition: all 0.3s ease;
+    background-color: var(--surface);
+    color: var(--primary);
+    border-color: var(--primary);
+    transition: all 0.3s ease;
 }
 
 .showtime-button:hover {
-  background-color: var(--primary);
-  color: var(--surface);
+    background-color: var(--primary);
+    color: var(--surface);
 }
 
 .btn-outline-primary {
-  color: var(--primary);
-  border-color: var(--primary);
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary);
-  color: var(--surface);
+    background-color: var(--primary);
+    color: var(--surface);
 }
 .card-title {
-  color: var(--primary);
-  font-size: 2rem;
-  font-weight: bold;
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
 }
-
