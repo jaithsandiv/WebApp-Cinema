@@ -34,7 +34,7 @@ public class RegisterCTL extends HttpServlet {
 
         // Default role for new user
         String role = "user";
-        
+
         User user = new User();
         user.setFirstname(firstname);
         user.setLastname(lastname);
