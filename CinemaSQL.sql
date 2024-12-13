@@ -6,17 +6,12 @@
 -- CREATE TABLE
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     phone VARCHAR(20) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role VARCHAR(20)
-);
-
-CREATE TABLE users (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE movies (
@@ -51,18 +46,21 @@ CREATE TABLE showtimes (
 
 
 -- INSERT TEST DATA
+INSERT INTO users (user_id, firstname, lastname, email, phone, password, role) VALUES 
+(1, 'admin', 'joe', 'admin@abc.com', '1231231234', 'admin', 'admin'),
+(2, 'user', 'joe', 'user@gmail.com', '7897897890', 'user', 'user');
+
 INSERT INTO movies (movie_id, title, description, release_date, status, genre, duration, image_path, imdb_rating, last_updated) VALUES 
-(1, 'Inception', 'A thief who enters the dreams of others to steal their secrets gets a chance to regain his old life in exchange for planting an idea in a CEO\'s mind.', '2010-07-16', 'Now Showing', 'Sci-Fi/Action', '02:28:00', './images/inception.jpg', 8.8, NOW()),
-(2, 'The Dark Knight', 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', '2008-07-18', 'Now Showing', 'Action/Crime/Drama', '02:32:00', './images/dark_knight.jpg', 9.0, NOW()),
-(3, 'Interstellar', 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.', '2014-11-07', 'Now Showing', 'Sci-Fi/Adventure', '02:49:00', './images/interstellar.jpg', 8.6, NOW()),
-(4, 'Dune: Part Two', 'A mythic and emotionally charged hero’s journey, Dune: Part Two will explore the mythic dimensions of Denis Villeneuve’s universe.', '2024-12-15', 'Coming Soon', 'Sci-Fi/Adventure', '02:30:00', './images/dune_part_two.jpg', 0.0, NOW());
+(1, 'Gladiator II', 'After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.', '2024-11-15', 'Now Showing', 'Action/Adventure', '02:28:00', './images/gladiator_ii_.jpg', 6.9, NOW()),
+(2, 'Wicked', 'Wicked tells the story of Elphaba, the future Wicked Witch of the West and her relationship with Glinda, the Good Witch of the North. Their friendship struggles through their opposing personalities and viewpoints, rivalry over the same love-interest, their reactions to the Wizard''s corrupt government, and, ultimately, Elphaba''s public fall from grace. The plot is set mostly before Dorothy''s arrival from Kansas, and includes several references to well-known scenes and dialogue in the 1939 film The Wizard of Oz as a backstory.', '2024-11-23', 'Now Showing', 'Musical/Fantasy', '02:40:00', './images/wicked.jpg', 8.1,NOW()),
+(3, 'Moana 2', 'Moana journeys to the far seas of Oceania after receiving an unexpected call from her wayfinding ancestors.', '2024-11-27', 'Now Showing', 'Family/Adventure', '01:40:00', './images/moana_2.jpg', 7.1, NOW()),
+(4, 'Kraven the Hunter', 'Kraven''s complex relationship with his ruthless father starts him down a path of vengeance, motivating him to become not only the greatest hunter in the world, but also one of its most feared.', '2024-12-13', 'Coming Soon', 'Action/Sci-Fi', '02:07:00', './images/kraven_the_hunter.jpg', 0.0, NOW());
 
 INSERT INTO theatres (theatre_id, name, location, image_path) VALUES
-(1, 'Cinema City', '123 Main Street, Downtown','./images/theatre1.jpg'),
-(2, 'Starlight Theatre', '456 Park Avenue, Uptown','./images/theatre2.jpg');
+(1, 'The Grand Picture Palace', '42 Main Street, Downtown','./images/theatre1.jpg'),
+(2, 'The Silver Screen', '42 Main Street, Uptown','./images/theatre2.jpg');
 
-INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time)
-VALUES
+INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time) VALUES
     (1, 1, CURRENT_DATE, '10:00:00'),
     (1, 1, CURRENT_DATE, '13:00:00'),
     (1, 1, CURRENT_DATE + INTERVAL 1 DAY, '10:00:00'),

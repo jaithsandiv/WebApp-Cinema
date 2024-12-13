@@ -34,7 +34,7 @@ public class MovieCTL extends HttpServlet {
                     Movie movie = new Movie();
                     movie.setId(rs.getInt("movie_id"));
                     movie.setTitle(rs.getString("title"));
-                    movie.setDescription(rs.getString("description"));
+//                    movie.setDescription(rs.getString("description"));
 //                    theatre.setId(rs.getInt("theatre_id"));
 //                    theatre.setName(rs.getString("name"));
 //                    theatre.setLocation(rs.getString("location"));
@@ -56,7 +56,7 @@ public class MovieCTL extends HttpServlet {
 //        request.getRequestDispatcher("/movies.jsp").forward(request, response);
 //        
          // Set both lists as request attributes
-        request.setAttribute("movies", movies);         // All movies
+        request.setAttribute("movies", movies);// All movies
      
 
         // Forward to index.jsp once
