@@ -1,7 +1,5 @@
 package com.mycompany.webapp.cinema.controller;
 
-import com.mycompany.webapp.cinema.model.Movie;
-import com.mycompany.webapp.cinema.utility.JDBCDataSource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,13 +15,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author USER
+ */
 @WebServlet(name = "index.jsp", urlPatterns = {"/index"})
 public class HomeCTL extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+/*
         List<Movie> nowShowMovies = new ArrayList<>();
         List<Movie> comingSoonMovies = new ArrayList<>();
 
@@ -72,7 +74,7 @@ public class HomeCTL extends HttpServlet {
 
         // Set both lists as request attributes
         request.setAttribute("nowshow", nowShowMovies);         // All movies
-        request.setAttribute("comingsoon", comingSoonMovies);
+        request.setAttribute("comingsoon", comingSoonMovies);*/
 
         // Forward to index.jsp once
         request.getRequestDispatcher("/index.jsp").forward(request, response);

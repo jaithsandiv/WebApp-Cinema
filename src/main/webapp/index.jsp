@@ -38,7 +38,7 @@
 </div>
 <div class="container mt-4">
     <div class="row">
-        <c:forEach var="movie" items="${nowShowMovies}">
+        <c:forEach var="movie" items="${nowshow}">
             <div class="col-md-3">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
                     <div class="card">
@@ -64,7 +64,7 @@
 <!-- Now Playing Movies -->
 <div class="container mt-4">
     <div class="row">
-        <c:forEach var="movie" items="${comingSoonMovies}">
+        <c:forEach var="movie" items="${comingsoon}">
             <div class="col-md-3">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
                     <div class="card">

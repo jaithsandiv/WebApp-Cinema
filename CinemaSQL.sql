@@ -46,9 +46,9 @@ CREATE TABLE showtimes (
 
 
 -- INSERT TEST DATA
-INSERT INTO mysql.users (firstname, lastname, email, phone, password, `role`) VALUES 
-('admin', 'joe', 'admin@abc.com', '1231231234', 'admin', 'admin'),
-('user', 'joe', 'user@gmail.com', '7897897890', 'user', 'user');
+INSERT INTO users (user_id, firstname, lastname, email, phone, password, role) VALUES 
+(1, 'admin', 'joe', 'admin@abc.com', '1231231234', 'admin', 'admin'),
+(2, 'user', 'joe', 'user@gmail.com', '7897897890', 'user', 'user');
 
 INSERT INTO movies (movie_id, title, description, release_date, status, genre, duration, image_path, imdb_rating, last_updated) VALUES 
 (1, 'Gladiator II', 'After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.', '2024-11-15', 'Now Showing', 'Action/Adventure', '02:28:00', './images/gladiator_ii_.jpg', 6.9, NOW()),

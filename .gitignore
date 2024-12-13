@@ -9,3 +9,5 @@
 
 *.log
 *.tmp
+
+system.properties
