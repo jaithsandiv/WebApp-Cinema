@@ -32,8 +32,8 @@
 }
 
 .showtime-button:hover {
-    background-color: var(--primary);
-    color: var(--surface);
+    background-color: var(--secondary);
+    color: white;
 }
 
 .btn-outline-primary {
@@ -42,8 +42,8 @@
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary);
-    color: var(--surface);
+    background-color: var(--secondary);
+    color: white;
 }
 .card-title {
     color: var(--primary);
