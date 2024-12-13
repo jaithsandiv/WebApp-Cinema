@@ -32,7 +32,7 @@
                 <ul class="footer-links">
                     <li><a href="tconditions.jsp">Terms and Conditions</a></li>
                     <li><a href="disclaimer.jsp">Disclaimer</a></li>
-                    <li><a href="/feedback">Customer Feedback</a></li>
+                    <li><a href="./feedback">Customer Feedback</a></li>
                 </ul>
             </div>
 

@@ -9,6 +9,8 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
         <!-- Common CSS for the header and footer -->
         <link href="css/common.css" rel="stylesheet">
         <!-- Allows page-specific CSS -->
@@ -29,13 +31,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Movies</a>
+                                <a class="nav-link ${param.activePage == 'movies' ? 'active' : ''}" href="./movies">Movies</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Schedules</a>
+                                <a class="nav-link ${param.activePage == 'theatres' ? 'active' : ''}" href="./theatres">Theatres</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="E-ticket.jsp">Theatres</a>
+                                <a class="nav-link ${param.activePage == 'about' ? 'active' : ''}" href="#">About</a>
                             </li>
                         </ul>
                         <div class="d-flex">

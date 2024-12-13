@@ -5,7 +5,7 @@
 
 -- CREATE TABLE
 CREATE TABLE users (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -15,7 +15,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE movies (
-    movie_id INT PRIMARY KEY AUTO_INCREMENT,
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     release_date DATE NOT NULL,
@@ -35,13 +35,22 @@ CREATE TABLE theatres (
 );
 
 CREATE TABLE showtimes (
-    showtime_id INT PRIMARY KEY AUTO_INCREMENT,
+    showtime_id INT AUTO_INCREMENT PRIMARY KEY,
     movie_id INT,
     theatre_id INT,
     show_date DATE,
     show_time TIME,
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
     FOREIGN KEY (theatre_id) REFERENCES theatres(theatre_id)
+);
+
+CREATE TABLE feedback (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    rating INT NOT NULL,
+    comments TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 

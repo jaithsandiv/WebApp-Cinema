@@ -50,11 +50,11 @@ main {
     transition: color 0.3s ease;
 }
 
-.navbar-brand:hover, .nav-link:hover, .btn-outline-light:hover, .btn:hover{
+.navbar-brand:hover, .nav-link:hover, .btn-outline-light:hover{
     color: var(--secondary) !important;
 }
 
-.btn-outline-light:hover, .btn:hover{
+.btn-outline-light:hover{
     background-color: transparent;
     border-color: var(--secondary);
 }

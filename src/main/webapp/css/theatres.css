@@ -1,0 +1,36 @@
+.th-container{
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.theatre-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+/*.theatre-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}*/
+
+.theatre-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.admin-controls {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.modal-lg {
+    max-width: 800px;
+}
+
+#currentTheatreImage {
+    border: 1px solid #dee2e6;
+    padding: 0.25rem;
+    background: #fff;
+}

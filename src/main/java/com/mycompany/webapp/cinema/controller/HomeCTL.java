@@ -1,5 +1,7 @@
 package com.mycompany.webapp.cinema.controller;
 
+import com.mycompany.webapp.cinema.model.Movie;
+import com.mycompany.webapp.cinema.utility.JDBCDataSource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,7 +27,7 @@ public class HomeCTL extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-/*
+
         List<Movie> nowShowMovies = new ArrayList<>();
         List<Movie> comingSoonMovies = new ArrayList<>();
 
@@ -37,7 +39,6 @@ public class HomeCTL extends HttpServlet {
                     Movie movie = new Movie();
                     movie.setId(rs.getInt("movie_id"));
                     movie.setTitle(rs.getString("title"));
-                    movie.setDescription(rs.getString("description"));
 //                    theatre.setId(rs.getInt("theatre_id"));
 //                    theatre.setName(rs.getString("name"));
 //                    theatre.setLocation(rs.getString("location"));
@@ -54,7 +55,6 @@ public class HomeCTL extends HttpServlet {
                     Movie movie = new Movie();
                     movie.setId(rs.getInt("movie_id"));
                     movie.setTitle(rs.getString("title"));
-                    movie.setDescription(rs.getString("description"));
 //                    theatre.setId(rs.getInt("theatre_id"));
 //                    theatre.setName(rs.getString("name"));
 //                    theatre.setLocation(rs.getString("location"));
@@ -74,7 +74,7 @@ public class HomeCTL extends HttpServlet {
 
         // Set both lists as request attributes
         request.setAttribute("nowshow", nowShowMovies);         // All movies
-        request.setAttribute("comingsoon", comingSoonMovies);*/
+        request.setAttribute("comingsoon", comingSoonMovies);
 
         // Forward to index.jsp once
         request.getRequestDispatcher("/index.jsp").forward(request, response);
