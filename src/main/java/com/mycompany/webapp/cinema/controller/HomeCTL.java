@@ -17,10 +17,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author USER
- */
 @WebServlet(name = "index.jsp", urlPatterns = {"/index"})
 public class HomeCTL extends HttpServlet {
 
@@ -39,6 +35,7 @@ public class HomeCTL extends HttpServlet {
                     Movie movie = new Movie();
                     movie.setId(rs.getInt("movie_id"));
                     movie.setTitle(rs.getString("title"));
+                    movie.setGenre(rs.getString("genre"));
 //                    theatre.setId(rs.getInt("theatre_id"));
 //                    theatre.setName(rs.getString("name"));
 //                    theatre.setLocation(rs.getString("location"));
@@ -55,6 +52,7 @@ public class HomeCTL extends HttpServlet {
                     Movie movie = new Movie();
                     movie.setId(rs.getInt("movie_id"));
                     movie.setTitle(rs.getString("title"));
+                    movie.setGenre(rs.getString("genre"));
 //                    theatre.setId(rs.getInt("theatre_id"));
 //                    theatre.setName(rs.getString("name"));
 //                    theatre.setLocation(rs.getString("location"));

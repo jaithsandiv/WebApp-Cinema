@@ -44,7 +44,7 @@
                             <a href="./booking-selection" class="btn btn-outline-light me-2">Book Now</a>
                             <c:choose>
                                 <c:when test="${sessionScope.user_id == null}">
-                                    <a href="./login" class="btn btn-outline-secondary ${param.activePage == 'login' ? 'active' : ''}">Login</a>
+                                    <a href="./login" class="btn btn-outline-info ${param.activePage == 'login' ? 'active' : ''}">Login</a>
                                 </c:when>
                                 <c:otherwise>
                                     <div class="dropdown">

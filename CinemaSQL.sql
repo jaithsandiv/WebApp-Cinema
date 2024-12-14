@@ -53,6 +53,28 @@ CREATE TABLE feedback (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+CREATE TABLE seat_booked_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    seat_number VARCHAR(10),
+    showtime_id INT,
+    seat_status ENUM('Booked', 'Temp Booked'),
+    booking_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
+);
+
+-- Add trigger to remove "Temp Booked" seats after 5 minutes if not finalized
+DELIMITER //
+
+CREATE EVENT remove_temp_bookings
+ON SCHEDULE EVERY 1 MINUTE
+DO
+BEGIN
+    DELETE FROM seat_booked_details
+    WHERE seat_status = 'Temp Booked' AND booking_time < NOW() - INTERVAL 5 MINUTE;
+END //
+
+DELIMITER ;
+
 
 -- INSERT TEST DATA
 INSERT INTO users (user_id, firstname, lastname, email, phone, password, role) VALUES 
@@ -107,6 +129,11 @@ INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time) VALUES
     (3, 2, CURRENT_DATE + INTERVAL 2 DAY, '11:00:00'),
     (3, 2, CURRENT_DATE + INTERVAL 2 DAY, '14:00:00');
 
+INSERT INTO seat_booked_details (seat_number, showtime_id, seat_status) VALUES
+('L1C1', 1, 'Booked'),
+('L1C2', 1, 'Temp Booked'),
+('R1C1', 2, 'Booked'),
+('R1C2', 2, 'Temp Booked');
 
 -- DISPLAY TABLE
 SELECT * FROM users;

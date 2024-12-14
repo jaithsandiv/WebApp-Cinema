@@ -7,9 +7,6 @@
     <jsp:param name="activePage" value="movies" />
 </jsp:include>
 
-
-<h1 class="text-center mt-1 mb-1">Movies</h1>
-
 <div class="container mt-4 mb-4">
     <div class="row">
         <!-- Card 1 -->
@@ -24,7 +21,9 @@
                 <p class="text-center">No Movies Available.</p>
             </div>
         </c:if>
-
+        <div>
+            <H2 class="text-center">Now Playing</H2>
+        </div>
         <c:forEach var="movie" items="${nowshow}">
             <div class="col-md-4">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
@@ -37,7 +36,6 @@
                     </div>
                 </a>
             </div>
-
         </c:forEach>
 
 
