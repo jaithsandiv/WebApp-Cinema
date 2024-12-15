@@ -27,12 +27,12 @@
     box-shadow: none;
 }
 .custom-btn {
-    background-color: #32012F;
-    border-color: #32012F;
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 .custom-btn:hover, .custom-btn:focus, .custom-btn:active {
-    background-color: #1e001c !important;
-    border-color: #1e001c !important;
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
 }
 .star-rating {
     display: flex;
