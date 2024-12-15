@@ -44,7 +44,7 @@
 
             <c:forEach var="theatre" items="${theatres}">
                 <div class="col-md-4">
-                    <div class="card theatre-card shadow-sm">
+                    <div class="card theatre-card">
                         <img src="${empty theatre.imagePath ? './images/placeholder.png' : theatre.imagePath}" 
                              class="card-img-top" 
                              alt="${theatre.name}">
