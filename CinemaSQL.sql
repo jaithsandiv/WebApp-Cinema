@@ -109,8 +109,9 @@ INSERT INTO movies (movie_id, title, description, release_date, status, genre, d
 
 
 INSERT INTO theatres (theatre_id, name, location, image_path) VALUES
-(1, 'The Grand Picture Palace', '42 Main Street, Downtown','./images/theatre1.jpg'),
-(2, 'The Silver Screen', '42 Main Street, Uptown','./images/theatre2.jpg');
+(1, 'The Grand Picture Palace', '123 Cinema Street, Movie City', './images/theatre03.jpg'),
+(2, 'The Silver Screen', '123 Cinema Street, Movie City', './images/theatre01.jpg'),
+(3, 'The Beacon Theatre', '123 Cinema Street, Movie City', './images/theatre02.jpg');
 
 INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time) VALUES
     (1, 1, CURRENT_DATE, '10:00:00'),
