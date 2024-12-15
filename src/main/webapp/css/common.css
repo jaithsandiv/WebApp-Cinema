@@ -50,11 +50,11 @@ main {
     transition: color 0.3s ease;
 }
 
-.navbar-brand:hover, .nav-link:hover, .btn-outline-light:hover, .btn:hover{
+.navbar-brand:hover, .nav-link:hover, .btn-outline-light:hover{
     color: var(--secondary) !important;
 }
 
-.btn-outline-light:hover, .btn:hover{
+.btn-outline-light:hover{
     background-color: transparent;
     border-color: var(--secondary);
 }
@@ -74,6 +74,14 @@ main {
 .navbar.minimized .nav-link, .navbar.minimized .btn-outline-light, .btn{
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
+}
+.btn-outline-info{
+    color: white;
+    border-color: var(--primary);
+}
+.btn-outline-info:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 footer {

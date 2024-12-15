@@ -1,16 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.theater {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.screen {
+    background-color: #ccc;
+    border-radius: 20px;
+    height: 30px;
+    width: 80%;
+    margin: 0 auto 20px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .seat {
-    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: lightblue;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.staircase {
+    width: 30px;
+    height: 40px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.seat.selected {
+    background-color: green;
+    color: white;
+}
+
+.seat.booked {
+    background-color: red;
+    color: white;
+    pointer-events: none;
+    cursor: default; /* Change cursor to indicate it’s not clickable */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
     margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-.active {
-    background-color: white;
+button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
 }
 
-.inactive {
-    background-color: gray;
+button:hover:not(:disabled) {
+    background-color: #0056b3;
 }
 
-.vip {
-    border: 2px solid gold;
+.seat-count {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
 }
