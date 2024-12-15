@@ -39,7 +39,6 @@
                         <label for="star1" title="1 star">★</label>
                     </div></center>
             </div>
-
             <div class="mb-4">
                 <p class="text-center mb-3">Kindly take a moment to tell us what you think.</p>
                 <textarea class="form-control custom-textarea" id="comment" name="comment" rows="4"></textarea>
