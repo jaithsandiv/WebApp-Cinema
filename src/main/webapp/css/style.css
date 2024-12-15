@@ -13,6 +13,25 @@
     height: 400px;
     object-fit: cover;
 }
+.submit-btn:hover {
+    background-color: var(--secondary);
+}
+.btn-outline-primary{
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-outline-primary:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-primary:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
 
 @media (max-width: 768px) {
     .carousel {

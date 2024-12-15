@@ -39,7 +39,7 @@
 <div class="container mt-4">
     <div class="row">
         <c:forEach var="movie" items="${nowshow}">
-            <div class="col-md-3">
+            <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
                     <div class="card">
                         <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">
@@ -66,7 +66,7 @@
 <div class="container mt-4">
     <div class="row">
         <c:forEach var="movie" items="${comingsoon}">
-            <div class="col-md-3">
+            <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
                     <div class="card">
                         <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">

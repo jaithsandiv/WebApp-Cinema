@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     const starRating = document.getElementById('star-rating');
     const stars = starRating.querySelectorAll('i');
     let rating = 0;
@@ -29,4 +29,4 @@ document.addEventListener('DOMContentLoaded', function () {
             updateStars(rating);
         });
     });
-});
+});*/

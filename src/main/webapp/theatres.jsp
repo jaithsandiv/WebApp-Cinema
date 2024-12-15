@@ -15,7 +15,7 @@
                 <h2 class="title mb-3 text-center">Theatres</h2>
                 <c:if test="${sessionScope.role eq 'admin'}">
                     <button type="button" class="btn btn-outline-primary cs-button" data-bs-toggle="modal" data-bs-target="#addTheatreModal">
-                        Add New Theatre
+                        Add Theatre
                     </button>
                 </c:if>
             </div>

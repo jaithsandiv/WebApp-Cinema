@@ -34,3 +34,26 @@
     background-color: #1e001c !important;
     border-color: #1e001c !important;
 }
+.star-rating {
+    display: flex;
+    direction: rtl;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 2rem;
+    padding: 0.1rem;
+}
+
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: #f5b301;
+}
