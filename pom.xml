@@ -49,9 +49,8 @@
         </dependency>
         <dependency>
             <groupId>com.paypal.sdk</groupId>
-            <artifactId>paypal-rest-sdk</artifactId>
+            <artifactId>rest-api-sdk</artifactId>
             <version>1.14.0</version>
-            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -68,12 +67,6 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
             <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.mycompany</groupId>
-            <artifactId>moviebooking</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>war</type>
         </dependency>
     </dependencies>
     
