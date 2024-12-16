@@ -22,7 +22,7 @@
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
-                    <a class="navbar-brand fs-4" href="./index">
+                    <a class="navbar-brand fs-4" href="./">
                         <img src="images/logo.png" alt="" width="80">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

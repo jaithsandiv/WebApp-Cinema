@@ -93,15 +93,15 @@
                         <input type="hidden" name="action" value="add">
                         <div class="mb-3">
                             <label class="form-label">Theatre Name</label>
-                            <input type="text" class="form-control" name="name" required>
+                            <input type="text" class="form-control custom-textarea" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Location</label>
-                            <input type="text" class="form-control" name="location" required>
+                            <input type="text" class="form-control custom-textarea" name="location" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Theatre Image</label>
-                            <input type="file" class="form-control" name="image" accept="image/*">
+                            <input type="file" class="form-control custom-textarea" name="image" accept="image/*">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -130,15 +130,15 @@
                                     <input type="hidden" name="theatreId" id="editTheatreId">
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Theatre Name</label>
-                                        <input type="text" class="form-control" name="name" id="editTheatreName" required>
+                                        <input type="text" class="form-control custom-textarea" name="name" id="editTheatreName" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Location</label>
-                                        <input type="text" class="form-control" name="location" id="editTheatreLocation" required>
+                                        <input type="text" class="form-control custom-textarea" name="location" id="editTheatreLocation" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Update Theatre Image</label>
-                                        <input type="file" class="form-control" name="image" accept="image/*" id="editImageInput">
+                                        <input type="file" class="form-control custom-textarea" name="image" accept="image/*" id="editImageInput">
                                         <small class="text-muted">Leave empty to keep current image</small>
                                     </div>
                                 </div>

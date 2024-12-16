@@ -65,3 +65,11 @@
     background-color: var(--secondary);
     border-color: var(--secondary);
 }
+.custom-textarea{
+    resize: none;
+    /*border-radius: 10px;*/
+}
+.custom-textarea:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
