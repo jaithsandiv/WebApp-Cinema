@@ -24,7 +24,7 @@ function submitSeats() {
 
     const adults = parseInt(document.getElementById("adults").value, 10);
     const children = parseInt(document.getElementById("children").value, 10);
-    const totalPrice = (adults * 1250) + (children * 750);
+    const totalPrice = (adults * 11) + (children * 8);
 
     selectedSeatsInput.value = selectedSeats.join(','); // Pass the list as a comma-separated string
     totalPriceInput.value = totalPrice;

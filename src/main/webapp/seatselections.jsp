@@ -84,7 +84,7 @@
                 </select>
             </div>
         </div>
-        <p>Ticket Price: Rs.  (Adult), Rs. 750 (Child)</p>
+        <p>Ticket Price: $11.00  (Adult), $8.00 (Child)</p>
     </div>
     <center><div class="screen">Screen</div></center>
     <p id="seatCount" class="seat-count">0 ticket(s) selected.</p>
