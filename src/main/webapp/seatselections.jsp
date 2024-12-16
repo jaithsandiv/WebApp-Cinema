@@ -49,6 +49,8 @@
 
     </div>
     <br>
+    <center><div class="screen">Screen</div></center>
+    <br><br>
     <div class="ticket-info">
         <div class="row justify-content-center mb-3">
             <div class="col-auto">
@@ -86,7 +88,6 @@
         </div>
         <p>Ticket Price: $11.00  (Adult), $8.00 (Child)</p>
     </div>
-    <center><div class="screen">Screen</div></center>
     <p id="seatCount" class="seat-count">0 ticket(s) selected.</p>
     <div class="buttons d-flex justify-content-center">
             <button class="btn btn-outline btn-sm" style="width: 108px;" onclick="history.back()">Back</button>

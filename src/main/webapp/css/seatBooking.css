@@ -19,7 +19,7 @@ h1 {
     /*margin: 0 auto 30px;*/
     text-align: center;
     line-height: 30px;
-    box-shadow: 0 5px 10px 0px var(--accent);
+    box-shadow: 0 5px 10px 0 var(--accent);
     /*border-radius: 50%;*/
     margin: 20px 0;
     transform: perspective(600px) rotateX(30deg);
