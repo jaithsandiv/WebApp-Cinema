@@ -78,7 +78,7 @@ CREATE TABLE temp_seats (
     FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
 );
 
--- Add trigger to remove "Temp Booked" seats after 5 minutes if not finalized
+-- Trigger to remove "Temp Booked" seats after 5 minutes if not finalized
 DELIMITER //
 
 CREATE EVENT remove_temp_bookings
@@ -163,8 +163,27 @@ INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time) VALUES
     (11, 3, CURRENT_DATE + INTERVAL 1 DAY, '16:00:00');
 
 INSERT INTO temp_seats (seat_number, showtime_id) VALUES
-('L1C2', 1),
-('R1C2', 2);
+('E15', 1),
+('B8', 2);
+
+INSERT INTO bookings (user_id, showtime_id, seat_numbers, amount, payment_date, payment_method, status) VALUES
+(1, 1, 'C1', 1250.0, NOW(), 'Credit Card', 'Booked'),
+(2, 2, 'C1', 1250.0, NOW(), 'Credit Card', 'Booked'),
+(1, 3, 'D1,D3', 2500.0, NOW(), 'Debit Card', 'Booked'),
+(1, 4, 'E10,E11', 2500.0, NOW(), 'PayPal', 'Booked');
+
+INSERT INTO feedback (rating, comment) VALUES
+(5, 'Amazing experience!'),
+(4, 'Great service, but the seats could be more comfortable.'),
+(3, 'Average experience, nothing special.'),
+(2, 'Not satisfied with the cleanliness.'),
+(1, 'Very poor service and rude staff.'),
+(5, 'Loved the movie and the atmosphere!'),
+(4, 'Good experience overall, but the snacks were overpriced.'),
+(3, 'It was okay, nothing extraordinary.'),
+(2, 'The sound system was too loud.'),
+(1, 'Terrible experience, will not come back.');
+
 
 -- DISPLAY TABLE
 SELECT * FROM users;
