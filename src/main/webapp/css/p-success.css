@@ -1,0 +1,145 @@
+.para {
+    font-size: 18px;
+    color: #555; /* Dark gray color for text */
+    text-align: center;
+}
+
+/* Strong text styles */
+strong {
+    color: #333; /* Darker color for emphasized text */
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: var(--secondary);
+    color: white;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Button active effect */
+.button:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+/* Booking summary styles */
+.booking-summary {
+    max-width: 800px;
+    margin: 2rem auto;
+    /*padding: 2rem;*/
+    background: #fff;
+}
+
+.summary-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.summary-header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.summary-body {
+    color: black;
+}
+
+.summary-body p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+.summary-body strong {
+    display: inline-block;
+    width: 150px;
+    color: black;
+}
+
+.summary-body span {
+    color: black;
+    font-weight: 500;
+}
+
+.summary-footer {
+    margin-top: 2rem;
+}
+
+.summary-footer p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.summary-footer span {
+    color: #3498db;
+    font-weight: 500;
+}
+
+/* Success message styling */
+.summary-body p:first-child {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Booking details table styles */
+.booking-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.booking-details-table th, .booking-details-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-details-table th {
+    color: black;
+}
+
+.booking-details-table td {
+    color: #34495e;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .booking-summary {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .summary-header h1 {
+        font-size: 2rem;
+    }
+
+    .summary-body strong {
+        width: 120px;
+        font-size: 1rem;
+    }
+
+    .summary-body span {
+        font-size: 1rem;
+    }
+}

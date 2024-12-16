@@ -1,23 +1,4 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fdfdfd;
-    margin: 0;
-}
-
-h1 {
-    color: #333;
-}
-
-p {
-    font-size: 18px;
-    color: #555;
-}
-
 .pay-button {
-    background-color: #0070ba; /* PayPal blue */
-    color: white;
     border: none;
     padding: 15px 30px;
     font-size: 18px;
@@ -28,8 +9,14 @@ p {
     display: inline-block;
 }
 
+.pay-button{
+    background-color: var(--primary);
+    color: white;
+}
+
 .pay-button:hover {
-    background-color: #005ea6; /* Darker blue on hover */
+    background-color: var(--secondary);
+    color: white;
     transform: scale(1.05); /* Slightly enlarge the button */
 }
 
