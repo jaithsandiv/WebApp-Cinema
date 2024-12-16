@@ -31,20 +31,21 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
+<br>
 <!-- Now Playing Movies -->
 <div>
-    <H1 class="text-center">Now Playing</H1>
+    <H2 class="text-center">Now Playing</H2>
 </div>
 <div class="container mt-4">
     <div class="row">
         <c:forEach var="movie" items="${nowshow}">
-            <div class="col-md-3">
+            <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
                     <div class="card">
                         <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">
                         <div class="card-body">
                             <h5 class="card-title">${movie.title}</h5>
+                            <p class="card-text">${movie.genre}</p>
                         </div>
                     </div>
                 </a>
@@ -56,21 +57,22 @@
         </c:if>
     </div>
 </div>
-
+<br>
 <!-- Coming Soon Movies -->
 <div>
-    <H1 class="text-center">Coming Soon</H1>
+    <H2 class="text-center">Coming Soon</H2>
 </div>
 <!-- Now Playing Movies -->
 <div class="container mt-4">
     <div class="row">
         <c:forEach var="movie" items="${comingsoon}">
-            <div class="col-md-3">
+            <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
                     <div class="card">
                         <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">
                         <div class="card-body">
                             <h5 class="card-title">${movie.title}</h5>
+                            <p class="card-text">${movie.genre}</p>
                         </div>
                     </div>
                 </a>
@@ -81,7 +83,7 @@
         </c:if>       
     </div>
 </div>
-
+<br>
 <!-- Include footer with parameters -->
 <jsp:include page="jsp/footer.jsp">
     <jsp:param name="js" value="home.js" />

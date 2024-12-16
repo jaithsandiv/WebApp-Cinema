@@ -1,16 +1,123 @@
+.theater {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.screen {
+    background-color: silver;
+    color: white;
+    /*border-radius: 5px;*/
+    height: 30px;
+    width: 80%;
+    /*margin: 0 auto 30px;*/
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0 5px 10px 0px var(--accent);
+    /*border-radius: 50%;*/
+    margin: 20px 0;
+    transform: perspective(600px) rotateX(30deg);
+    border-bottom-left-radius: 70%;
+    border-bottom-right-radius: 70%
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .seat {
-    padding: 10px;
-    margin: 5px;
-}
-
-.active {
+    width: 40px;
+    height: 35px;
     background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.inactive {
-    background-color: gray;
+.staircase {
+    width: 30px;
+    height: 40px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    display: inline-block;
 }
 
-.vip {
-    border: 2px solid gold;
+.seat.selected {
+    background-color: var(--primary);
+    color: white;
+}
+
+.seat.booked {
+    background-color: #E4003A;
+    color: white;
+    pointer-events: none;
+    cursor: default; /* Change cursor to indicate it’s not clickable */
+}
+
+.btn-outline {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+button {
+    /*padding: 10px 20px;*/
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline:disabled {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    cursor: not-allowed;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+}
+
+.seat-count {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.custom-textarea{
+    resize: none;
+    /*border-radius: 10px;*/
+}
+.custom-textarea:focus {
+    border-color: #000000;
+    box-shadow: none;
 }

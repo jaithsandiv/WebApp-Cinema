@@ -3,7 +3,7 @@
 }
 
 .s-container {
-    max-width: 450px;
+    max-width: 350px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
@@ -85,5 +85,12 @@ input:focus {
 .submit-btn:hover, .delete-btn:hover {
     background-color: var(--secondary);
 }
-
+.custom-textarea{
+    resize: none;
+    /*border-radius: 10px;*/
+}
+.custom-textarea:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
 

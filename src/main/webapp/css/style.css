@@ -1,31 +1,10 @@
-/*.carousel-container {
-    width: 100%;
-    margin: 0 auto;
-}
-.carousel {
-    height: 550px;
-}
-.carousel-inner {
-    height: 100%;
-}
-.carousel-item {
-    height: 100%;
-}
-.carousel-item img {
-    height: 100%;
-    width: 100%;
-}
-.carousel-control-prev, .carousel-control-next {
-    width: 10%;
-}
-*/
 .card-link {
     color: inherit;
     text-decoration: none;
 }
 .card-link:hover .card {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    transform: translateY(-3px);
+    transform: translateY(-10px);
 }
 .card {
     transition: all 0.3s ease;
@@ -34,7 +13,37 @@
     height: 400px;
     object-fit: cover;
 }
-
+.submit-btn:hover {
+    background-color: var(--secondary);
+}
+.btn-outline-primary{
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-outline-primary:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-primary:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.custom-textarea{
+    resize: none;
+    /*border-radius: 10px;*/
+}
+.custom-textarea:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
+.modal-header{
+    text-align: center;
+    align-content: center;
+}
 @media (max-width: 768px) {
     .carousel {
         height: 400px;
