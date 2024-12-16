@@ -90,12 +90,12 @@
     </div>
     <p id="seatCount" class="seat-count">0 ticket(s) selected.</p>
     <div class="buttons d-flex justify-content-center">
-            <button class="btn btn-outline btn-sm" style="width: 108px;" onclick="history.back()">Back</button>
+            <button class="btn btn-outline-dark btn-sm" style="width: 108px;" onclick="history.back()">Back</button>
             <form id="seatForm" action="seat-selection" method="POST">
                 <input type="hidden" id="selectedSeatsInput" name="selectedSeats" />
                 <input type="hidden" id="totalPriceInput" name="totalPrice" />
                 <input type="hidden" id="showtimeIdInput" name="showtime_id" value="<%= request.getParameter("showtime_id") %>" />
-                <button class="btn btn-outline btn-sm" style="width: 108px;" type="submit" id="continueButton" onclick="submitSeats()" disabled>Continue</button>
+                <button class="btn btn-outline-dark btn-sm" style="width: 108px;" type="submit" id="continueButton" onclick="submitSeats()" disabled>Continue</button>
             </form>
     </div>
 </div>
