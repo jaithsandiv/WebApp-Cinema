@@ -54,6 +54,10 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.seat:hover{
+    background-color: var(--primary);
+    color: white;
+}
 
 .staircase {
     width: 30px;

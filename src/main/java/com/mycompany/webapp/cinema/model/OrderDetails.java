@@ -9,7 +9,6 @@ package com.mycompany.webapp.cinema.model;
  * @author M S I
  */
 
- 
 public class OrderDetails {
     private String movieName;
     private float price;

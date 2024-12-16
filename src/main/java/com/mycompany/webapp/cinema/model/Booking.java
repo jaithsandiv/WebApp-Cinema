@@ -1,13 +1,16 @@
 package com.mycompany.webapp.cinema.model;
 
 public class Booking {
-
     private int bookingId;
     private String movieTitle;
     private String theatreName;
     private String showtime;
     private String seatNumbers;
     private String status;
+    private double amount;
+    private String paymentMethod;
+    private String paymentDate;
+    private String userEmail;
 
     // Getters and Setters
     public int getBookingId() {
@@ -58,27 +61,35 @@ public class Booking {
         this.status = status;
     }
 
-    public void setAmount(double aDouble) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public double getAmount() {
+        return amount;
     }
 
-    public void setPaymentMethod(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public void setPaymentDate(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setUserEmail(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(String paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
     public String getUserEmail() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return userEmail;
     }
 
-    public String getAmount() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }

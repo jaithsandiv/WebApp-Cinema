@@ -18,7 +18,7 @@
             <p>Total Price: $${totalPrice}</p>
             <p>Showtime ID: ${showtime_id}</p>
 
-            <form action="pay" method="post">
+            <form action="PayPalServlet" method="post">
                 <input type="hidden" name="selectedSeats" value="${selectedSeats}">
                 <input type="hidden" name="totalPrice" value="${totalPrice}">
                 <input type="hidden" name="showtime_id" value="${showtime_id}">
