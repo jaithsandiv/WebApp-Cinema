@@ -34,7 +34,7 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE theatres (
-    theatre_id INT PRIMARY KEY AUTO_INCREMENT,
+    theatre_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     location VARCHAR(255),
     image_path VARCHAR(255) NOT NULL
@@ -78,19 +78,18 @@ CREATE TABLE temp_seats (
     FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
 );
 
--- Trigger to remove "Temp Booked" seats after 5 minutes if not finalized
+-- Add trigger to remove "Temp Booked" seats after 5 minutes if not finalized
 DELIMITER //
 
 CREATE EVENT remove_temp_bookings
 ON SCHEDULE EVERY 1 MINUTE
 DO
 BEGIN
-    DELETE FROM seat_booked_details
-    WHERE seat_status = 'Temp Booked' AND booking_time < NOW() - INTERVAL 5 MINUTE;
+    DELETE FROM temp_seats
+    WHERE booking_time < NOW() - INTERVAL 5 MINUTE;
 END //
 
 DELIMITER ;
-
 
 -- INSERT TEST DATA
 INSERT INTO users (user_id, firstname, lastname, email, phone, password, role) VALUES 
@@ -118,48 +117,54 @@ INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time) VALUES
     (1, 1, CURRENT_DATE, '13:00:00'),
     (1, 1, CURRENT_DATE + INTERVAL 1 DAY, '10:00:00'),
     (1, 1, CURRENT_DATE + INTERVAL 1 DAY, '13:00:00'),
-    (1, 1, CURRENT_DATE + INTERVAL 1 DAY, '16:00:00'),
     (1, 1, CURRENT_DATE + INTERVAL 2 DAY, '10:00:00'),
     (1, 2, CURRENT_DATE, '11:00:00'),
     (1, 2, CURRENT_DATE, '14:00:00'),
     (1, 2, CURRENT_DATE + INTERVAL 1 DAY, '11:00:00'),
-    (1, 2, CURRENT_DATE + INTERVAL 1 DAY, '14:00:00'),
-    (1, 2, CURRENT_DATE + INTERVAL 2 DAY, '11:00:00'),
     (1, 2, CURRENT_DATE + INTERVAL 2 DAY, '14:00:00'),
-    (1, 2, CURRENT_DATE + INTERVAL 2 DAY, '17:00:00'),
+    (1, 3, CURRENT_DATE, '09:30:00'),
+    (1, 3, CURRENT_DATE + INTERVAL 1 DAY, '12:30:00'),
+
     (2, 1, CURRENT_DATE, '11:30:00'),
     (2, 1, CURRENT_DATE + INTERVAL 1 DAY, '11:30:00'),
-    (2, 1, CURRENT_DATE + INTERVAL 2 DAY, '11:30:00'),
     (2, 1, CURRENT_DATE + INTERVAL 2 DAY, '14:30:00'),
     (2, 2, CURRENT_DATE, '10:30:00'),
-    (2, 2, CURRENT_DATE + INTERVAL 1 DAY, '10:30:00'),
     (2, 2, CURRENT_DATE + INTERVAL 1 DAY, '13:30:00'),
-    (2, 2, CURRENT_DATE + INTERVAL 2 DAY, '10:30:00'),
-    (2, 2, CURRENT_DATE + INTERVAL 2 DAY, '13:30:00'),
-    (2, 2, CURRENT_DATE + INTERVAL 2 DAY, '16:30:00'),
+    (2, 3, CURRENT_DATE, '12:00:00'),
+    (2, 3, CURRENT_DATE + INTERVAL 2 DAY, '15:00:00'),
+
     (3, 1, CURRENT_DATE, '12:00:00'),
     (3, 1, CURRENT_DATE, '15:00:00'),
     (3, 1, CURRENT_DATE + INTERVAL 1 DAY, '12:00:00'),
-    (3, 1, CURRENT_DATE + INTERVAL 1 DAY, '15:00:00'),
-    (3, 1, CURRENT_DATE + INTERVAL 2 DAY, '12:00:00'),
-    (3, 1, CURRENT_DATE + INTERVAL 2 DAY, '15:00:00'),
-    (3, 1, CURRENT_DATE + INTERVAL 2 DAY, '18:00:00'),
     (3, 2, CURRENT_DATE, '11:00:00'),
-    (3, 2, CURRENT_DATE, '14:00:00'),
-    (3, 2, CURRENT_DATE + INTERVAL 1 DAY, '11:00:00'),
-    (3, 2, CURRENT_DATE + INTERVAL 1 DAY, '14:00:00'),
-    (3, 2, CURRENT_DATE + INTERVAL 2 DAY, '11:00:00'),
-    (3, 2, CURRENT_DATE + INTERVAL 2 DAY, '14:00:00');
+    (3, 2, CURRENT_DATE + INTERVAL 2 DAY, '14:00:00'),
+    (3, 3, CURRENT_DATE, '13:30:00'),
+    (3, 3, CURRENT_DATE + INTERVAL 1 DAY, '16:30:00'),
+
+    (4, 1, CURRENT_DATE, '09:45:00'),
+    (4, 2, CURRENT_DATE + INTERVAL 1 DAY, '14:15:00'),
+    (4, 3, CURRENT_DATE + INTERVAL 2 DAY, '17:30:00'),
+
+    (5, 1, CURRENT_DATE, '10:15:00'),
+    (5, 1, CURRENT_DATE + INTERVAL 1 DAY, '13:45:00'),
+    (5, 2, CURRENT_DATE, '11:45:00'),
+    (5, 3, CURRENT_DATE + INTERVAL 1 DAY, '15:15:00'),
+
+    (6, 2, CURRENT_DATE, '12:15:00'),
+    (6, 3, CURRENT_DATE, '15:45:00'),
+    (6, 3, CURRENT_DATE + INTERVAL 1 DAY, '18:45:00'),
+
+    (10, 1, CURRENT_DATE, '08:30:00'),
+    (10, 2, CURRENT_DATE + INTERVAL 1 DAY, '11:00:00'),
+    (10, 3, CURRENT_DATE + INTERVAL 2 DAY, '14:30:00'),
+
+    (11, 2, CURRENT_DATE, '10:00:00'),
+    (11, 3, CURRENT_DATE, '13:00:00'),
+    (11, 3, CURRENT_DATE + INTERVAL 1 DAY, '16:00:00');
 
 INSERT INTO temp_seats (seat_number, showtime_id) VALUES
 ('L1C2', 1),
 ('R1C2', 2);
-
-INSERT INTO seat_booked_details (seat_number, showtime_id, seat_status) VALUES
-('L1C1', 1, 'Booked'),
-('L1C2', 1, 'Temp Booked'),
-('R1C1', 2, 'Booked'),
-('R1C2', 2, 'Temp Booked');
 
 -- DISPLAY TABLE
 SELECT * FROM users;
