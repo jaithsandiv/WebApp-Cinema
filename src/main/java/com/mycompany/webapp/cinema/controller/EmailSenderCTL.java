@@ -11,8 +11,8 @@ import jakarta.mail.internet.MimeMessage;
 
 public class EmailSenderCTL {
     public static void sendEmailWithHtml(String toEmail, String subject, String htmlContent) {
-        String fromEmail = "yasinducsilva@gmail.com"; // Replace with your email
-        String password = "vroy wkvg xlwt yhao"; // Replace with your email password
+        String fromEmail = "jaith0202@gmail.com"; // Replace with your email
+        String password = "EqsV2.0$442##"; // Replace with your email password
         
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
