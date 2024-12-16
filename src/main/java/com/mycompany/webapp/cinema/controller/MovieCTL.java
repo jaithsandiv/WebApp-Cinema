@@ -92,14 +92,6 @@ public class MovieCTL extends HttpServlet {
                     addMovie(request);
                     request.setAttribute("success", "Movie added successfully!");
                     break;
-                case "edit":
-                    updateMovie(request);
-                    request.setAttribute("success", "Movie updated successfully!");
-                    break;
-                case "delete":
-                    deleteMovie(request);
-                    request.setAttribute("success", "Movie deleted successfully!");
-                    break;
                 default:
                     request.setAttribute("error", "Invalid action specified.");
             }
@@ -144,98 +136,6 @@ public class MovieCTL extends HttpServlet {
                 stmt.setString(12, produce);
                 stmt.setString(13, writer);
                 stmt.setString(14, music);
-                stmt.executeUpdate();
-            }
-        }
-    }
-
-    private void updateMovie(HttpServletRequest request) throws Exception {
-        int movieId = Integer.parseInt(request.getParameter("movieId"));
-        String title = request.getParameter("title");
-        String genre = request.getParameter("genre");
-        String description = request.getParameter("description");
-        String imdb_rating = request.getParameter("imdb_rating");
-        String duration = request.getParameter("duration");
-        String release_date = request.getParameter("release_date");
-        String status = request.getParameter("status");
-        String actors = request.getParameter("actors");
-        String characters = request.getParameter("characters");
-        String director = request.getParameter("director");
-        String produce = request.getParameter("produce");
-        String writer = request.getParameter("writer");
-        String music = request.getParameter("music");
-
-        // First get the old image path
-        String oldImagePath = null;
-        try (Connection conn = JDBCDataSource.getConnection()) {
-            String selectSql = "SELECT image_path FROM movies WHERE movie_id = ?";
-            try (PreparedStatement selectStmt = conn.prepareStatement(selectSql)) {
-                selectStmt.setInt(1, movieId);
-                ResultSet rs = selectStmt.executeQuery();
-                if (rs.next()) {
-                    oldImagePath = rs.getString("image_path");
-                }
-            }
-        }
-
-        // Process new image if uploaded
-        String newImagePath = processImageUpload(request);
-
-        try (Connection conn = JDBCDataSource.getConnection()) {
-            String sql = newImagePath != null
-                    ? "UPDATE movies SET title = ?, genre = ?, description = ?, imdb_rating = ?, duration = ?, release_date = ?, status = ?, actors = ?, characters = ?, director = ?, produce = ?, writer = ?, music = ?, image_path = ? WHERE movie_id = ?"
-                    : "UPDATE movies SET title = ?, genre = ?, description = ?, imdb_rating = ?, duration = ?, release_date = ?, status = ?, actors = ?, characters = ?, director = ?, produce = ?, writer = ?, music = ? WHERE movie_id = ?";
-
-            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.setString(1, title);
-                stmt.setString(2, genre);
-                stmt.setString(3, description);
-                stmt.setString(4, imdb_rating);
-                stmt.setString(5, duration);
-                stmt.setString(6, release_date);
-                stmt.setString(7, status);
-                stmt.setString(8, actors);
-                stmt.setString(9, characters);
-                stmt.setString(10, director);
-                stmt.setString(11, produce);
-                stmt.setString(12, writer);
-                stmt.setString(13, music);
-                if (newImagePath != null) {
-                    stmt.setString(14, newImagePath);
-                    stmt.setInt(15, movieId);
-                    // Delete old image after successful update
-                    if (oldImagePath != null) {
-                        deleteImage(oldImagePath);
-                    }
-                } else {
-                    stmt.setInt(14, movieId);
-                }
-                stmt.executeUpdate();
-            }
-        }
-    }
-
-    private void deleteMovie(HttpServletRequest request) throws Exception {
-        int movieId = Integer.parseInt(request.getParameter("movieId"));
-
-        try (Connection conn = JDBCDataSource.getConnection()) {
-            // First, get the image path to delete the file
-            String selectSql = "SELECT image_path FROM movies WHERE movie_id = ?";
-            try (PreparedStatement selectStmt = conn.prepareStatement(selectSql)) {
-                selectStmt.setInt(1, movieId);
-                ResultSet rs = selectStmt.executeQuery();
-                if (rs.next()) {
-                    String image_path = rs.getString("image_path");
-                    if (image_path != null) {
-                        deleteImage(image_path);
-                    }
-                }
-            }
-
-            // Then delete the movie record
-            String sql = "DELETE FROM movies WHERE movie_id = ?";
-            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.setInt(1, movieId);
                 stmt.executeUpdate();
             }
         }

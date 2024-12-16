@@ -45,7 +45,7 @@
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="${email}"
+                            <input type="email" class="form-control custom-textarea" id="email" name="email" value="${email}"
                                    required="">
                             <div class="invalid-feedback">
                                 Please provide a valid email.
@@ -54,7 +54,7 @@
 
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" value="${phone}"
+                            <input type="tel" class="form-control custom-textarea" id="phone" name="phone" value="${phone}"
                                    pattern="[0-9]{10}">
                             <div class="invalid-feedback">
                                 Please provide a valid 10-digit phone number.
@@ -75,12 +75,12 @@
                         <input type="hidden" name="formType" value="password">
                         <div class="mb-3">
                             <label for="currentPassword" class="form-label">Current Password</label>
-                            <input type="password" class="form-control" id="currentPassword" name="currentPassword">
+                            <input type="password" class="form-control custom-textarea" id="currentPassword" name="currentPassword">
                         </div>
 
                         <div class="mb-3">
                             <label for="newPassword" class="form-label">New Password</label>
-                            <input type="password" class="form-control" id="newPassword" name="newPassword">
+                            <input type="password" class="form-control custom-textarea" id="newPassword" name="newPassword">
                         </div>
 
                         <button type="submit" class="submit-btn">Update Password</button>

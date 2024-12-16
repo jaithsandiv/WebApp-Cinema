@@ -17,3 +17,23 @@
 a {
     text-decoration: none;
 }
+
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.custom-textarea{
+    resize: none;
+    /*border-radius: 10px;*/
+}
+
+.custom-textarea:focus {
+    border-color: #000000;
+    box-shadow: none;
+}

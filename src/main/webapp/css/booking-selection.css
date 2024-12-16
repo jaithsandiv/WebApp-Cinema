@@ -4,6 +4,7 @@
 }
 .movie-header {
     cursor: pointer;
+    background-color: var(--accent);
     transition: background-color 0.3s;
 }
 .movie-header:hover {
@@ -26,13 +27,13 @@
 }
 .showtime-button {
     background-color: var(--surface);
-    color: var(--primary);
     border-color: var(--primary);
     transition: all 0.3s ease;
 }
 
 .showtime-button:hover {
     background-color: var(--secondary);
+    border-color: var(--secondary);
     color: white;
 }
 
@@ -46,7 +47,11 @@
     color: white;
 }
 .card-title {
-    color: var(--primary);
+    color: black;
     font-size: 2rem;
     font-weight: bold;
 }
+.card{
+    border-color: white;
+}
+

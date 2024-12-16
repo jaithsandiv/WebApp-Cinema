@@ -1,18 +1,8 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
-
 .theater {
     text-align: center;
     margin: 20px auto;
     max-width: 800px;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -21,14 +11,20 @@ h1 {
 }
 
 .screen {
-    background-color: #ccc;
-    border-radius: 20px;
+    background-color: silver;
+    color: white;
+    /*border-radius: 5px;*/
     height: 30px;
     width: 80%;
-    margin: 0 auto 20px;
+    /*margin: 0 auto 30px;*/
     text-align: center;
     line-height: 30px;
-    font-weight: bold;
+    box-shadow: 0 5px 10px 0 var(--accent);
+    /*border-radius: 50%;*/
+    margin: 20px 0;
+    transform: perspective(600px) rotateX(30deg);
+    border-bottom-left-radius: 70%;
+    border-bottom-right-radius: 70%
 }
 
 .seats {
@@ -42,15 +38,15 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .seat {
     width: 40px;
-    height: 40px;
-    background-color: lightblue;
+    height: 35px;
+    background-color: white;
     border: 1px solid #aaa;
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,23 +65,25 @@ h1 {
 }
 
 .seat.selected {
-    background-color: green;
+    background-color: var(--primary);
     color: white;
 }
 
 .seat.booked {
-    background-color: red;
+    background-color: #E4003A;
     color: white;
     pointer-events: none;
     cursor: default; /* Change cursor to indicate it’s not clickable */
 }
 
-.buttons {
-    margin-top: 20px;
+.btn-outline {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
 }
 
 button {
-    padding: 10px 20px;
+    /*padding: 10px 20px;*/
     margin: 5px;
     background-color: #007bff;
     color: white;
@@ -96,17 +94,30 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:disabled {
-    background-color: #bbb;
+.btn-outline:disabled {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
     cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
-    background-color: #0056b3;
+.btn-outline:hover:not(:disabled) {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
 }
 
 .seat-count {
     margin-top: 15px;
     font-size: 16px;
     color: #555;
+}
+
+.custom-textarea{
+    resize: none;
+    /*border-radius: 10px;*/
+}
+.custom-textarea:focus {
+    border-color: #000000;
+    box-shadow: none;
 }

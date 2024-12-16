@@ -26,7 +26,6 @@ body {
     background-color: var(--background);
     font-family: 'DM Sans', sans-serif;
     margin-top: 64.6px;
-    display: flex;
 }
 
 main {

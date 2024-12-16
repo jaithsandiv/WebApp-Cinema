@@ -20,9 +20,9 @@
             <div class="col-md-2 mb-4 mb-md-0">
                 <h5>QUICK LINKS</h5>
                 <ul class="footer-links">
-                    <li><a href="/movies">Movies</a></li>
-                    <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="/theatres">Theatres</a></li>
+                    <li><a href="movies">Movies</a></li>
+                    <li><a href="theatres">Theatres</a></li>
+                    <li><a href="#">About Us</a></li>
                 </ul>
             </div>
 

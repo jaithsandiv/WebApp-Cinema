@@ -22,7 +22,7 @@
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
-                    <a class="navbar-brand fs-4" href="./index">
+                    <a class="navbar-brand fs-4" href="./">
                         <img src="images/logo.png" alt="" width="80">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -48,7 +48,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <div class="dropdown">
-                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             My Account
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

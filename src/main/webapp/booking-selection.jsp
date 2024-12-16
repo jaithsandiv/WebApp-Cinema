@@ -11,7 +11,7 @@
 
 <!-- Page specific content -->
 <div class="container py-5">
-    <h2 class="title mb-4">Book Movie Tickets</h2>
+    <h2 class="title mb-4 text-center">Book Movie Tickets</h2>
     <div class="card">
         <div class="card-body">
 
