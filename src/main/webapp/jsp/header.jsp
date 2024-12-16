@@ -48,7 +48,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <div class="dropdown">
-                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             My Account
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
