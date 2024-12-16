@@ -54,6 +54,10 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.seat:hover{
+    background-color: var(--primary);
+    color: white;
+}
 
 .staircase {
     width: 30px;
@@ -76,16 +80,12 @@ h1 {
     cursor: default; /* Change cursor to indicate it’s not clickable */
 }
 
-.btn-outline {
+.btn-outline-dark {
     background-color: var(--primary);
     border-color: var(--primary);
     color: white;
-}
-
-button {
-    /*padding: 10px 20px;*/
+    padding: 10px 20px;
     margin: 5px;
-    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -94,17 +94,33 @@ button {
     transition: background-color 0.3s ease;
 }
 
-.btn-outline:disabled {
+.btn-outline-dark:disabled {
     background-color: var(--accent);
     border-color: var(--accent);
     color: white;
     cursor: not-allowed;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-.btn-outline:hover:not(:disabled) {
+.btn-outline-dark:hover:not(:disabled) {
     background-color: var(--secondary);
     border-color: var(--secondary);
     color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
 .seat-count {

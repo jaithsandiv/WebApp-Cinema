@@ -71,7 +71,7 @@
 
         <!-- Back to home button -->
         <p>
-            <a href="http://localhost:8080/moviebooking/" class="button">Back to Home</a>
+            <a href="./" class="button">Back to Home</a>
         </p>
     </div>
 

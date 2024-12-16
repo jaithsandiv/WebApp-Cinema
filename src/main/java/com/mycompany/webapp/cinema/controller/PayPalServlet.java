@@ -41,8 +41,8 @@ public class PayPalServlet extends HttpServlet {
         payer.setPaymentMethod("paypal");
 
         RedirectUrls redirectUrls = new RedirectUrls();
-        redirectUrls.setCancelUrl("http://localhost:8080/moviebooking");
-        redirectUrls.setReturnUrl("http://localhost:8080/moviebooking/execute");
+        redirectUrls.setCancelUrl("http://localhost:8080/WebApp-Cinema/");
+        redirectUrls.setReturnUrl("http://localhost:8080/WebApp-Cinema/ExecutePaymentServlet");
 
         Payment payment = new Payment();
         payment.setIntent("sale");

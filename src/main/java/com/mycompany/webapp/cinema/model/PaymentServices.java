@@ -4,12 +4,6 @@
  */
 package com.mycompany.webapp.cinema.model;
 
-/**
- *
- * @author Shiraz
- */
- 
- 
 import java.io.IOException;
 import java.util.*;
 import com.paypal.api.payments.*;

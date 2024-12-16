@@ -72,9 +72,9 @@ public class ExecutePaymentServlet extends HttpServlet {
             // Send email
             String emailContent = createEmailContent(booking);
             EmailSenderCTL.sendEmailWithHtml(
-                    booking.getUserEmail(),
-                    "Your Booking Confirmation - ABC Cinema",
-                    emailContent
+                booking.getUserEmail(),
+                "Your Booking Confirmation - ABC Cinema",
+                emailContent
             );
 
             // Pass attributes to success.jsp
@@ -95,7 +95,7 @@ public class ExecutePaymentServlet extends HttpServlet {
     private void saveBooking(Integer userId, String seatNumbers, Double amount, int showtimeId, String paymentMethod, String paymentStatus) {
         try (Connection connection = JDBCDataSource.getConnection()) {
             String query = "INSERT INTO bookings (user_id, showtime_id, seat_numbers, amount, payment_date, payment_method, status) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                         + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(query)) {
                 ps.setInt(1, userId);  // Set user ID
@@ -121,13 +121,13 @@ public class ExecutePaymentServlet extends HttpServlet {
     private Booking getBookingDetails(Integer userId, int showtimeId) throws SQLException {
         Booking booking = new Booking();
         try (Connection conn = JDBCDataSource.getConnection()) {
-            String sql = "SELECT b.*, u.email, m.title as movie_name, s.show_date, s.show_time "
-                    + "FROM bookings b "
-                    + "INNER JOIN users u ON b.user_id = u.user_id "
-                    + "INNER JOIN showtimes s ON b.showtime_id = s.showtime_id "
-                    + "INNER JOIN movies m ON s.movie_id = m.movie_id "
-                    + "WHERE b.user_id = ? AND b.showtime_id = ?";
-
+            String sql = "SELECT b.*, u.email, m.title as movie_name, s.show_date, s.show_time " +
+                        "FROM bookings b " +
+                        "INNER JOIN users u ON b.user_id = u.user_id " +
+                        "INNER JOIN showtimes s ON b.showtime_id = s.showtime_id " +
+                        "INNER JOIN movies m ON s.movie_id = m.movie_id " +
+                        "WHERE b.user_id = ? AND b.showtime_id = ?";
+                        
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setInt(1, userId);
             statement.setInt(2, showtimeId);
