@@ -9,31 +9,26 @@ package com.mycompany.webapp.cinema.model;
  * @author M S I
  */
 
+ 
 public class OrderDetails {
-    private final String movieName;
-    private final float subtotal;
-    private final float tax;
-    private final float total;
+    private String movieName;
+    private float price;
+    private float tax;
+    private float total;
 
-    // Constructor to initialize OrderDetail with movie details
-    public OrderDetails(String movieName, String subtotal, String tax, String total) {
+    public OrderDetails(String movieName, float price, float tax, float total) {
         this.movieName = movieName;
-        this.subtotal = Float.parseFloat(subtotal);
-        this.tax = Float.parseFloat(tax);
-        this.total = calculateTotal();
+        this.price = price;
+        this.tax = tax;
+        this.total = total;
     }
 
-    // Getters for the fields
-    private float calculateTotal(){
-          return this.subtotal + this.tax;
-
-    }
     public String getMovieName() {
         return movieName;
     }
 
-    public String getSubtotal() {
-        return String.format("%.2f", subtotal);
+    public String getPrice() {
+        return String.format("%.2f", price);
     }
 
     public String getTax() {
@@ -43,5 +38,4 @@ public class OrderDetails {
     public String getTotal() {
         return String.format("%.2f", total);
     }
-     
 }

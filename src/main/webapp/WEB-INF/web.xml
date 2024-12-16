@@ -19,6 +19,18 @@
         <servlet-name>PaymentCTL</servlet-name>
         <servlet-class>com.mycompany.webapp.cinema.controller.PaymentCTL</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExecutePaymentServlet</servlet-name>
+        <servlet-class>com.mycompany.webapp.cinema.controller.ExecutePaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForwardToPaymentServlet</servlet-name>
+        <servlet-class>com.mycompany.webapp.cinema.controller.ForwardToPaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PayPalServlet</servlet-name>
+        <servlet-class>com.mycompany.webapp.cinema.controller.PayPalServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -34,6 +46,18 @@
     <servlet-mapping>
         <servlet-name>PaymentCTL</servlet-name>
         <url-pattern>/PaymentCTL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExecutePaymentServlet</servlet-name>
+        <url-pattern>/ExecutePaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForwardToPaymentServlet</servlet-name>
+        <url-pattern>/ForwardToPaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PayPalServlet</servlet-name>
+        <url-pattern>/PayPalServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
