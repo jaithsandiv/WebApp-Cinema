@@ -3,8 +3,8 @@
 
 <jsp:include page="jsp/header.jsp">
     <jsp:param name="title" value="Booking History" />
-    <jsp:param name="css" value="account.css" />
-    <jsp:param name="activePage" value="account" />
+    <jsp:param name="css" value="booking.css" />
+    <jsp:param name="activePage" value="booking-history" />
 </jsp:include>
 
 <div class="container my-5">
@@ -59,5 +59,5 @@
 </div>
 
 <jsp:include page="jsp/footer.jsp">
-    <jsp:param name="js" value="account.js" />
+    <jsp:param name="js" value="booking-history.js" />
 </jsp:include>
