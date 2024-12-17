@@ -8,25 +8,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="jsp/header.jsp">
     <jsp:param name="title" value="ABC Cinema" />
-    <jsp:param name="css" value="payment.css" />
+    <jsp:param name="css" value="p-success.css" />
     <jsp:param name="activePage" value="home" />   
 </jsp:include>
 
 
 
 
- <title>Payment Success</title>
+<title>Payment Success</title>
 </head>
 <body>
     <div class="container py-5">
-        <h1>Payment Successful!</h1>
-        <p>Thank you for your booking. Your payment has been processed successfully.</p>
-        
+        <h1 class="text-center">Payment Successful!</h1>
+        <p class="para">Thank you for your booking. Your payment has been processed successfully.</p>
+
         <!-- Display booking details -->
         <div class="booking-summary" id="bookingSummary">            
             <div class="summary-body">
-                <p>Your booking has been confirmed and an e-ticket has been sent to your email!</p>
-                
+                <p class="para">Your booking has been confirmed and an e-ticket has been sent to your email!</p>
                 <table class="booking-details-table">
                     <tr>
                         <th>Booking ID:</th>
@@ -62,17 +61,14 @@
                     </tr>
                 </table>
             </div>
-            
             <div class="summary-footer">
                 <p>Booking Date & Time: <span>${booking.paymentDate}</span></p>
                 <p>An e-ticket has been sent to: <span>${booking.userEmail}</span></p>
+                <p>
+                    <a href="./" class="button">Back to Home</a>
+                </p>
             </div>
         </div>
-
-        <!-- Back to home button -->
-        <p>
-            <a href="./" class="button">Back to Home</a>
-        </p>
     </div>
 
 

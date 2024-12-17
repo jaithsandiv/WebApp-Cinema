@@ -50,7 +50,7 @@
         </form>
     </div>
 </div>
-<!-- Admin Section -->
+<!-- Admin View Section -->
 <c:if test="${sessionScope.role eq 'admin'}">
     <div class="container py-5">
         <h2 class="text-center mb-4">Customer Feedback</h2>

@@ -42,15 +42,15 @@ h1 {
 }
 
 .seat {
-    width: 40px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background-color: white;
     border: 1px solid #aaa;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -133,7 +133,44 @@ h1 {
     resize: none;
     /*border-radius: 10px;*/
 }
+
 .custom-textarea:focus {
     border-color: #000000;
     box-shadow: none;
+}
+
+.legend-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+}
+
+.selected {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 3px;
+}
+
+.available {
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.reserved {
+    background-color: #E4003A;
+    border-color: #E4003A;
+    border-radius: 3px;
 }
