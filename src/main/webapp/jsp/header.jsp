@@ -53,7 +53,7 @@
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="./account" ${param.activePage == 'account' ? 'active' : ''}>Account</a>
-                                            <a class="dropdown-item" href="./booking-history"${param.activePage == 'booking-history' ? 'active' : ''}>Booking History</a>
+                                            <a class="dropdown-item" href="booking-history"${param.activePage == 'booking-history' ? 'active' : ''}>Booking History</a>
                                         </div>
                                     </div>
                                 </c:otherwise>

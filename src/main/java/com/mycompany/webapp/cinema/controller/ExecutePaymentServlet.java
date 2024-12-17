@@ -73,7 +73,7 @@ public class ExecutePaymentServlet extends HttpServlet {
             String emailContent = createEmailContent(booking);
             EmailSenderCTL.sendEmailWithHtml(
                 booking.getUserEmail(),
-                "Your Booking Confirmation - ABC Cinema",
+                "ABC Cinemas - Your Booking Confirmation",
                 emailContent
             );
 
