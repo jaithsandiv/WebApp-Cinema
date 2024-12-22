@@ -35,12 +35,12 @@
                         <input type="hidden" name="formType" value="userInfo">
                         <div class="mb-3">
                             <label for="username" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="firstname" value="${firstname}" disabled="">
+                            <input type="text" class="form-control" id="firstname" value="${firstname}" disabled="" style="opacity: 50%;">
                         </div>
 
                         <div class="mb-3">
                             <label for="username" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastname" value="${lastname}" disabled="">
+                            <input type="text" class="form-control" id="lastname" value="${lastname}" disabled="" style="opacity: 50%;">
                         </div>
 
                         <div class="mb-3">

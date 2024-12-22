@@ -10,7 +10,7 @@
     <jsp:param name="activePage" value="seatCTL" />
 </jsp:include>
 <div class="theater">
-    <h1>Select Your Seats</h1>
+    <h3>Select Your Seats</h3>
     <br>
     <div class="container mt-3">
         <div class="legend-container">
@@ -31,8 +31,8 @@
     <br>
     <div class="seats">
         <%
-    int rows = 15;
-    int cols = 15;
+    int rows = 13;
+    int cols = 25;
     char rowLetter = (char) ('A' + rows - 1); // Start with the bottom-most letter
     Map<String, Object> seatStatusMap = new HashMap<>();
     if (request.getAttribute("seatDetails") != null) {
@@ -66,7 +66,7 @@
 
     </div>
     <br>
-    <center><div class="screen">Screen</div></center>
+    <center><div class="screen"><!--Screen--></div></center>
     <br><br>
     <div class="ticket-info">
         <div class="row justify-content-center mb-3">
@@ -103,7 +103,7 @@
                 </select>
             </div>
         </div>
-        <p>Ticket Price: $11.00  (Adult), $8.00 (Child)</p>
+        <p>Ticket Price: $11.00 per Adult, $8.00 per Child<p>
     </div>
     <p id="seatCount" class="seat-count">0 ticket(s) selected.</p>
     <div class="buttons d-flex justify-content-center">

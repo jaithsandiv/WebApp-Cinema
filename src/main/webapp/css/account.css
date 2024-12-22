@@ -15,7 +15,6 @@
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
 .input-wrapper {
@@ -28,11 +27,16 @@ input {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    opacity: 70%;
 }
 
 input:focus {
     outline: none;
     border-color: var(--primary);
+}
+
+input:disabled{
+    opacity: 50%;
 }
 
 .password-toggle {
@@ -81,10 +85,24 @@ input:focus {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.submit-btn:hover, .delete-btn:hover {
-    background-color: var(--secondary);
+.submit-btn, .delete-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+.submit-btn:hover, .submit-btn:focus, .submit-btn:active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    transform: scale(1.07); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
+}
+
+.delete-btn:hover, .delete-btn:focus, .delete-btn:active {
+    background-color: red;
+    border-color: red;
+    transform: scale(1.08); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--warning), 0 0 20px var(--warning), 0 0 30px var(--warning); /* Glowing effect */
+}
+
 .custom-textarea{
     resize: none;
     /*border-radius: 10px;*/

@@ -31,27 +31,48 @@
     transition: all 0.3s ease;
 }
 
-.showtime-button:hover {
+.showtime-button:hover, .showtime-button:focus, .showtime-button:active {
     background-color: var(--secondary);
     border-color: var(--secondary);
     color: white;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
 
 .btn-outline-primary {
     color: var(--primary);
     border-color: var(--primary);
+    transition: all 0.3s ease;
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active{
     background-color: var(--secondary);
+    border-color: var(--secondary);
     color: white;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
+
 .card-title {
-    color: black;
+    color: var(--primary);
     font-size: 2rem;
     font-weight: bold;
 }
-.card{
+.card {
     border-color: white;
+    opacity: 83%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 5); /* Adds a slight glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* General styles for the form */
+.form-select, .form-control {
+    transition: box-shadow 0.3s ease;
+}
+
+/* Glowing effect on focus */
+.form-select:focus, .form-control:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 10); /* Adds a slight glow */
+    border-color: var(--secondary); /* Optional: Change the border color to match the glow */
 }
 

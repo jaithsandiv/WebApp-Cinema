@@ -5,33 +5,38 @@
     padding: 20px;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
-}
-
 .screen {
-    background-color: silver;
-    color: white;
-    /*border-radius: 5px;*/
-    height: 30px;
-    width: 80%;
-    /*margin: 0 auto 30px;*/
+    background-color: var(--secondary);
+    color: var(--background);
+    height: 20px; /* Made the screen thinner */
+    width: 60%;
     text-align: center;
-    line-height: 30px;
-    box-shadow: 0 5px 10px 0 var(--accent);
-    /*border-radius: 50%;*/
-    margin: 20px 0;
+    line-height: 20px; /* Adjust line height to match the thinner height */
+    box-shadow: 0 0 15px var(--secondary), 0 0 30px var(--secondary); /* Adds a glowing effect */
+    margin: 5px 0;
     transform: perspective(600px) rotateX(30deg);
     border-bottom-left-radius: 70%;
-    border-bottom-right-radius: 70%
+    border-bottom-right-radius: 70%;
+    position: relative;
+}
+
+.screen::before {
+    content: "SCREEN";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--background);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--background), 0 0 10px var(--background); /* Glowing text effect */
 }
 
 .seats {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    color: var(--primary);
 }
 
 .row {
@@ -42,10 +47,9 @@ h1 {
 }
 
 .seat {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: white;
-    border: 1px solid #aaa;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -56,21 +60,15 @@ h1 {
 }
 .seat:hover{
     background-color: var(--primary);
+    border-color: var(--primary);
     color: white;
-}
-
-.staircase {
-    width: 30px;
-    height: 40px;
-    margin: 0 10px;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    display: inline-block;
+    box-shadow: 0 0 7.5px var(--primary), 0 0 15px var(--primary);
 }
 
 .seat.selected {
     background-color: var(--primary);
     color: white;
+    box-shadow: 0 0 7.5px var(--primary), 0 0 15px var(--primary);
 }
 
 .seat.booked {
@@ -78,6 +76,7 @@ h1 {
     color: white;
     pointer-events: none;
     cursor: default; /* Change cursor to indicate it’s not clickable */
+    box-shadow: 0 0 7px #E4003A, 0 0 15px #E4003A;
 }
 
 .btn-outline-dark {
@@ -86,12 +85,11 @@ h1 {
     color: white;
     padding: 10px 20px;
     margin: 5px;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-outline-dark:disabled {
@@ -101,32 +99,28 @@ h1 {
     cursor: not-allowed;
     padding: 10px 20px;
     margin: 5px;
-    color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
-.btn-outline-dark:hover:not(:disabled) {
+.btn-outline-dark:hover:not(:disabled),
+.btn-outline-dark:focus:not(:disabled),
+.btn-outline-dark:active:not(:disabled) {
     background-color: var(--secondary);
     border-color: var(--secondary);
     color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
+
 
 .seat-count {
     margin-top: 15px;
     font-size: 16px;
-    color: #555;
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
 
 .custom-textarea{

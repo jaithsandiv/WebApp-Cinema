@@ -11,7 +11,7 @@
 
 <!-- Page Content-->
 <div class="banner">
-    <h1>Welcome Back to ABC Cinemas</h1>
+    <h1>Welcome to ABC Cinemas</h1>
     <p>Where you immerse yourself in the world of cinema.</p>
 </div>
 

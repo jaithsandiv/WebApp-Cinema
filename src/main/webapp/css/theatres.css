@@ -10,11 +10,6 @@
     transition: transform 0.2s ease-in-out;
 }
 
-/*.theatre-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
-}*/
-
 .theatre-card img {
     height: 200px;
     object-fit: cover;
@@ -34,42 +29,252 @@
     padding: 0.25rem;
     background: #fff;
 }
-.submit-btn {
-    width: 50%;
-    padding: 0.75rem;
+.book-btn {
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
     background-color: var(--primary);
     color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-    background-color: var(--secondary);
-}
-.btn-outline-primary{
-    color: var(--primary);
-    border-color: var(--primary);
-}
-.btn-outline-primary:hover{
-    background-color: var(--secondary);
-    border-color: var(--secondary);
-}
-.btn-primary{
-    background-color: var(--primary);
-    border-color: var(--primary);
-}
-.btn-primary:hover{
-    background-color: var(--secondary);
-    border-color: var(--secondary);
 }
 .custom-textarea{
     resize: none;
-    /*border-radius: 10px;*/
 }
 .custom-textarea:focus {
     border-color: #000000;
     box-shadow: none;
+}
+
+.modal {
+    opacity: 80%;
+    color: var(--primary);
+    box-shadow: 0 0 10px var(--background), 0 0 20px var(--background), 0 0 30px var(--background); /* Glowing effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.modal:hover, .modal:focus, .modal:active {
+    box-shadow: 0 0 15px var(--background), 0 0 30px var(--background), 0 0 45px var(--background); /* Enhanced glowing effect */
+    transform: scale(1.05); /* Slightly bigger when hovered or clicked */
+}
+.btn-outline-danger, .btn-outline-secondary {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ 
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active {
+    background-color: red;  
+    border-color: red;
+    color: white;
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; 
+}
+
+
+.btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active {
+    background-color: grey; 
+    border-color: grey;
+    color: white;
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px grey, 0 0 20px grey, 0 0 30px grey; 
+}
+.book-btn, .btn-primary {
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-btn:hover, .book-btn:focus, .book-btn:active,
+/*.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,*/
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
+}
+/*
+.btn-outline-primary {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--secondary);
+    border-color: var(--secondary);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+*/
+.btn-primary {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.book-btn:disabled, .btn-primary:disabled {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    cursor: not-allowed;
+}/*
+.btn-outline-primary:disabled{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+    cursor: not-allowed;
+}*/
+
+.relative {
+    position: relative;
+}
+.relative:hover{
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--background), 0 0 20px var(--background), 0 0 30px var(--background); /* Glowing effect */
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.relative:hover .overlay {
+    opacity: 1;
+}
+
+.card-header {
+    padding: 16px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.address {
+    color: #888;
+}
+
+.card-footer {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.book-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-group {
+    display: flex;
+    gap: 0; /* No gap between buttons */
+}
+
+.outline-button {/*
+    border: 1px solid #007bff;*/
+    background: white;
+    color: #007bff;
+}
+.edit-button, .delete-button {
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Edit button */
+.edit-button {
+    color: grey;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0 0 4px 0;
+    background: none; /* Remove background if needed */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.edit-button:hover, .edit-button:focus, .edit-button:active {
+    color: grey;
+    transform: scale(1.1); /* Makes the text 10% bigger */
+    text-shadow: 0 0 10px grey, 0 0 20px grey, 0 0 30px grey; /* Glowing effect in grey */
+}
+
+/* Delete button */
+.delete-button {
+    color: red;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0 0 0 4px;
+    background: none; /* Remove background if needed */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.delete-button:hover, .delete-button:focus, .delete-button:active {
+    color: red;
+    transform: scale(1.1); /* Makes the text 10% bigger */
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; /* Glowing effect in red */
+}
+
+
+.object-cover{
+    height: 300px;
+    width: 500px;
+}
+
+.btn-outline-primary {
+    padding: 8px;
+    border: 1px solid var(--secondary); /* Set the initial border color to var(--secondary) */
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--secondary);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
+}
+
+.btn-outline-primary:disabled {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+    cursor: not-allowed;
 }

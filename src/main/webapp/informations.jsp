@@ -26,17 +26,19 @@
                 <!-- Movie Details Column -->
                 <div class="col-md-8">
                     <div class="d-flex align-items-center mb-2">
-                        <h2 class="mb-0 me-3">${movie.title}</h2>
-                        <span class="badge bg-warning text-dark fs-5">IMDB: ${movie.imdb_rating}</span>
+                        <h2 class="mb-0 me-3" style="color: #FF9E0B;">${movie.title}</h2>
+                        <span class="badge bg-warning text-dark fs-5" style="box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary);">IMDB: ${movie.imdb_rating}</span>
                     </div>
-                    <p class="text-muted mb-3">${movie.genre} &bull; <i class="bi bi-clock"></i> ${movie.duration}</p>
+                    <div style="color: #adadad;">
+                        <p class="mb-3">${movie.genre} &bull; <i class="bi bi-clock"></i> ${movie.duration}</p>
+                    </div>
                     <!-- Horizontal line-->
                     <hr class="custom-hr">
-                    <H4>Story Line:</H4>
+                    <H4 style="color: #FF9E0B;">Story Line:</H4>
                     <p class="mb-4" style="font-size: 1rem;">${movie.description}</p>
                     <!-- Horizontal line-->
                     <hr class="custom-hr">
-                    <h4>Cast</h4>
+                    <h4 style="color: #FF9E0B;">Cast</h4>
                     <div class="row">
                         <div class="col-md-6">
                             <h6>Actors</h6>
@@ -58,7 +60,7 @@
                     </div><br>
                     <!-- Horizontal line-->
                     <hr class="custom-hr">
-                    <h4>Team</h4>
+                    <h4 style="color: #FF9E0B;">Team</h4>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <div style="display: flex; justify-content: flex-start; gap: 10px; font-size: 0.9rem;">
                             <h6 style="margin: 0; font-size: 0.9rem;">Directed by</h6> 

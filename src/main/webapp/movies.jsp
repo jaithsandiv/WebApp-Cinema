@@ -36,11 +36,11 @@
         <c:forEach var="movie" items="${movies}">
             <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
-                    <div class="card">
-                        <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">${movie.genre}</p>
+                    <div class="movie-card">
+                        <img src="${empty movie.image_path ? './images/placeholder.png?height=600&width=400' : movie.image_path}" alt="${movie.title}">
+                        <div class="movie-info">
+                            <h5 class="mb-1">${movie.title}</h5>
+                            <p class="mb-0 small">${movie.genre}</p>
                         </div>
                     </div>
                 </a>
@@ -123,7 +123,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Add Movie</button>
                     </div>
                 </form>

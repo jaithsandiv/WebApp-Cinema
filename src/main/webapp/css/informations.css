@@ -7,26 +7,38 @@
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+H2, H4{    
+    text-shadow: 0 0 2.5px var(--secondary), 0 0 5px var(--secondary), 0 0 7.5px var(--secondary);
 }
 
 .submit-btn:hover {
-    background-color: var(--secondary);
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary);
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 a {
     text-decoration: none;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: var(--primary);
     border-color: var(--primary);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background-color: var(--secondary);
     border-color: var(--secondary);
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
+
 
 .custom-textarea{
     resize: none;
@@ -36,4 +48,36 @@ a {
 .custom-textarea:focus {
     border-color: #000000;
     box-shadow: none;
+}
+.btn-outline-danger, .btn-outline-secondary {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and active states for btn-outline-danger */
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active {
+    background-color: red; /* Original color for danger button */
+    border-color: red;
+    color: white;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; /* Glowing effect in red */
+}
+
+/* Hover and active states for btn-outline-secondary */
+.btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active {
+    background-color: grey; /* Original color for secondary button */
+    border-color: grey;
+    color: white;
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px grey, 0 0 20px grey, 0 0 30px grey; /* Glowing effect in grey */
+}
+.modal {
+    opacity: 80%;
+    color: var(--primary);
+    box-shadow: 0 0 10px var(--background), 0 0 20px var(--background), 0 0 30px var(--background); /* Glowing effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.modal:hover, .modal:focus, .modal:active {
+    box-shadow: 0 0 15px var(--background), 0 0 30px var(--background), 0 0 45px var(--background); /* Enhanced glowing effect */
+    transform: scale(1.05); /* Slightly bigger when hovered or clicked */
 }

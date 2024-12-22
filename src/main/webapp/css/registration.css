@@ -1,23 +1,13 @@
-:root {
-    --primary: #32012F;
-    --secondary: #F97300;
-    --accent: #524C42;
-
-    --background: #FFFFFF;
-    --surface: #FFFFFF;
-    --text: #32012F;
-    --text-light: rgba(255, 255, 255, 0.7);
-
-    --success: #10B981;
-    --warning: #F59E0B;
-    --error: #EF4444;
+H2, H4 {    
+    text-shadow: 0 0 2.5px var(--secondary), 0 0 5px var(--secondary), 0 0 7.5px var(--secondary);
 }
 
 .banner {
-    background-color: var(--primary);
+    background: linear-gradient(to bottom, var(--primary), transparent);
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    opacity: 70%; /* Ensure full opacity for the gradient */
 }
 
 .banner h1 {
@@ -39,7 +29,7 @@
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .form-group {
@@ -49,7 +39,7 @@
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: white;
 }
 
 .input-wrapper {
@@ -62,6 +52,7 @@ input {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    opacity: 70%;
 }
 
 input:focus {
@@ -92,7 +83,8 @@ input:focus {
     gap: 1rem;
 }
 
-.submit-btn {
+/* Buttons */
+.submit-btn{
     width: 100%;
     padding: 0.75rem;
     background-color: var(--primary);
@@ -101,41 +93,35 @@ input:focus {
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-    background-color: var(--secondary);
+.submit-btn:hover,
+.submit-btn:focus, 
+.submit-btn:active{
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary);
+    transform: scale(1.05); /* Makes the button 5% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
 
-.signup-link {
+/* Links */
+.signup-link, .login-link {
     text-align: center;
     margin-top: 1rem;
-    color: #666;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.signup-link a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.signup-link a:hover {
+.signup-link a, .login-link a {
     color: var(--secondary);
-}
-
-.login-link {
-    text-align: center;
-    margin-top: 1rem;
-    color: #666;
-}
-
-.login-link a {
-    color: #32012F;
     text-decoration: none;
     font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.login-link a:hover {
-    color: #F97300;
+.signup-link a:hover, .login-link a:hover {
+    color: var(--secondary);
+    transform: scale(1.1); /* Makes the text 10% bigger */
+    text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }

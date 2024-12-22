@@ -46,6 +46,7 @@ public class TheatreCTL extends HttpServlet {
                     theatre.setName(rs.getString("name"));
                     theatre.setLocation(rs.getString("location"));
                     theatre.setImagePath(rs.getString("image_path"));
+                    theatre.setDescription(rs.getString("description"));
                     theatres.add(theatre);
                 }
             }
@@ -100,23 +101,27 @@ public class TheatreCTL extends HttpServlet {
     private void addTheatre(HttpServletRequest request) throws Exception {
         String name = request.getParameter("name");
         String location = request.getParameter("location");
+        String description = request.getParameter("description");
         String imagePath = processImageUpload(request);
 
         try (Connection conn = JDBCDataSource.getConnection()) {
-            String sql = "INSERT INTO theatres (name, location, image_path) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO theatres (name, location, image_path, description) VALUES (?, ?, ?, ?)";
             try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.setString(1, name);
                 stmt.setString(2, location);
                 stmt.setString(3, imagePath);
+                stmt.setString(4, description);
                 stmt.executeUpdate();
             }
         }
     }
 
+    /*
     private void updateTheatre(HttpServletRequest request) throws Exception {
         int theatreId = Integer.parseInt(request.getParameter("theatreId"));
         String name = request.getParameter("name");
         String location = request.getParameter("location");
+        String description = request.getParameter("description");
 
         // First get the old image path
         String oldImagePath = null;
@@ -142,15 +147,62 @@ public class TheatreCTL extends HttpServlet {
             try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.setString(1, name);
                 stmt.setString(2, location);
+                stmt.setString(3, description);
                 if (newImagePath != null) {
                     stmt.setString(3, newImagePath);
-                    stmt.setInt(4, theatreId);
+                    stmt.setInt( ,theatreId);
                     // Delete old image after successful update
                     if (oldImagePath != null) {
                         deleteImage(oldImagePath);
                     }
                 } else {
                     stmt.setInt(3, theatreId);
+                }
+                stmt.executeUpdate();
+            }
+        }
+    }*/
+    private void updateTheatre(HttpServletRequest request) throws Exception {
+        int theatreId = Integer.parseInt(request.getParameter("theatreId"));
+        String name = request.getParameter("name");
+        String location = request.getParameter("location");
+        String description = request.getParameter("description");
+
+        // First get the old image path
+        String oldImagePath = null;
+        try (Connection conn = JDBCDataSource.getConnection()) {
+            String selectSql = "SELECT image_path FROM theatres WHERE theatre_id = ?";
+            try (PreparedStatement selectStmt = conn.prepareStatement(selectSql)) {
+                selectStmt.setInt(1, theatreId);
+                ResultSet rs = selectStmt.executeQuery();
+                if (rs.next()) {
+                    oldImagePath = rs.getString("image_path");
+                }
+            }
+        }
+
+        // Process new image if uploaded
+        String newImagePath = processImageUpload(request);
+
+        try (Connection conn = JDBCDataSource.getConnection()) {
+            String sql = newImagePath != null
+                    ? "UPDATE theatres SET name = ?, location = ?, image_path = ?, description = ? WHERE theatre_id = ?"
+                    : "UPDATE theatres SET name = ?, location = ?, description = ? WHERE theatre_id = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setString(1, name);
+                stmt.setString(2, location);
+                if (newImagePath != null) {
+                    stmt.setString(3, newImagePath);
+                    stmt.setString(4, description);
+                    stmt.setInt(5, theatreId);
+                    // Delete old image after successful update
+                    if (oldImagePath != null) {
+                        deleteImage(oldImagePath);
+                    }
+                } else {
+                    stmt.setString(3, description);
+                    stmt.setInt(4, theatreId);
                 }
                 stmt.executeUpdate();
             }

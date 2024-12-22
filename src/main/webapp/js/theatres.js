@@ -1,7 +1,8 @@
-function editTheatre(id, name, location, imagePath) {
+function editTheatre(id, name, location, imagePath, description) {
     document.getElementById('editTheatreId').value = id;
     document.getElementById('editTheatreName').value = name;
     document.getElementById('editTheatreLocation').value = location;
+    document.getElementById('editTheatreDescription').value = description; 
 
     // Set current image
     const imageElement = document.getElementById('currentTheatreImage');
@@ -25,3 +26,14 @@ function deleteTheatre(id) {
     document.getElementById('deleteTheatreId').value = id;
     new bootstrap.Modal(document.getElementById('deleteTheatreModal')).show();
 }
+document.querySelector('.book-button').addEventListener('click', function() {
+    alert('Booking functionality not implemented.');
+});
+
+document.querySelector('.edit-button').addEventListener('click', function() {
+    alert('Edit functionality not implemented.');
+});
+
+document.querySelector('.delete-button').addEventListener('click', function() {
+    alert('Delete functionality not implemented.');
+});

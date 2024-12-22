@@ -6,6 +6,7 @@ public class Theatre {
     private String name;
     private String location;
     private String image_path;
+    private String description;
 
     // Getters and Setters
     public int getId() {
@@ -38,5 +39,13 @@ public class Theatre {
 
     public void setImagePath(String image_path) {
         this.image_path = image_path;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

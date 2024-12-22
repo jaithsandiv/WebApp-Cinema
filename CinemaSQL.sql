@@ -34,11 +34,13 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE theatres (
-    theatre_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    location VARCHAR(255),
-    image_path VARCHAR(255) NOT NULL
+    theatre_id INT AUTO_INCREMENT PRIMARY KEY, 
+    name VARCHAR(255) NOT NULL, 
+    location VARCHAR(255),  
+    image_path VARCHAR(255) NOT NULL, 
+    description TEXT
 );
+
 
 CREATE TABLE showtimes (
     showtime_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -93,7 +95,7 @@ DELIMITER ;
 
 -- INSERT TEST DATA
 INSERT INTO users (user_id, firstname, lastname, email, phone, password, role) VALUES 
-(1, 'admin', 'joe', 'admin@abc.com', '1231231234', 'admin', 'admin'),
+(1, 'admin', 'joe', 'jaith2987@abc.com', '1231231234', 'admin', 'admin'),
 (2, 'user', 'joe', 'user@gmail.com', '7897897890', 'user', 'user');
 
 INSERT INTO movies (movie_id, title, description, release_date, status, genre, duration, image_path, imdb_rating, actors, characters, director, produce, writer, music, last_updated) VALUES 
@@ -106,11 +108,11 @@ INSERT INTO movies (movie_id, title, description, release_date, status, genre, d
 (7, 'Sonic the Hedgehog 3', 'Sonic, Knuckles and Tails reunite to battle Shadow, a mysterious new enemy with powers unlike anything they''ve faced before. With their abilities outmatched in every way, they seek out an unlikely alliance to stop Shadow and protect the planet.', '2024-12-20', 'Coming Soon', 'Action/Adventure', '01:50:00', './images/sonic3.jpg', 0.0, 'Ben Schwartz, Keanu Reeves, Jim Carrey', 'Sonic, Shadow, Doctor Eggman ', 'Jeff Fowler', 'Neal H. Moritz, Toby Ascher, Toru Nakahara, Hitoshi Okuno', 'Pat Casey, Josh Miller, John Whittington', 'Tom Holkenborg', NOW()),
 (8, 'Solo Leveling - ReAwakening', 'Over a decade after ''gates'' connecting worlds appeared, awakening ''hunters'' with superpowers, weakest hunter Sung Jinwoo encounters a double dungeon and accepts a mysterious quest, becoming the only one able to level up, changing his fate.', '2024-12-06', 'Coming Soon', 'Action/Anime/Dark Fantasy', '02:01:00', './images/sololeveling.jpg', 8.1, 'Taito Ban, Reina Ueda, Daisuke Hirakawa', 'Sung Jinwoo, Cha Hae-in, Choi Jong-in', 'Shunsuke Nakashige', 'Aniplex, Inc. ', 'Chugong', 'Hiroyuki Sawano, TOMORROW X TOGETHER', NOW());
 
+INSERT INTO theatres (theatre_id, name, location, image_path, description) VALUES 
+(1, 'The Grand Picture Palace', '123 Cinema Street, Movie City', './images/theatre03.jpg', 'Indulge in cinematic luxury. Our plush lounge chairs recline to your perfect viewing angle, offering unparalleled comfort. Settle in, grab a gourmet snack, and let the movie transport you. Our theatre is designed for your ultimate relaxation and enjoyment.'),
+(2, 'The Silver Screen', '123 Cinema Street, Movie City', './images/theatre01.jpg', 'Experience cinema on a grand scale. Our IMAX theatre boasts a massive screen, laser projection, and immersive sound, transporting you into the heart of the story. '),
+(3, 'The Beacon Theatre', '123 Cinema Street, Movie City', './images/theatre02.jpg', 'Prepare to be enveloped in sound. Our Dolby Atmos theatre features cutting-edge technology that brings the movie to life around you.  Experience sound that moves, breathes, and surrounds you, creating a truly immersive cinematic experience');
 
-INSERT INTO theatres (theatre_id, name, location, image_path) VALUES
-(1, 'The Grand Picture Palace', '123 Cinema Street, Movie City', './images/theatre03.jpg'),
-(2, 'The Silver Screen', '123 Cinema Street, Movie City', './images/theatre01.jpg'),
-(3, 'The Beacon Theatre', '123 Cinema Street, Movie City', './images/theatre02.jpg');
 
 INSERT INTO showtimes (movie_id, theatre_id, show_date, show_time) VALUES
     (1, 1, CURRENT_DATE, '10:00:00'),
@@ -234,3 +236,10 @@ TRUNCATE TABLE temp_seats;
 TRUNCATE TABLE bookings;
 
 TRUNCATE TABLE feedback;
+
+ALTER TABLE theatres
+DROP COLUMN description;
+
+ALTER TABLE theatres
+ADD description TEXT;
+

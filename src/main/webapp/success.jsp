@@ -25,7 +25,7 @@
         <!-- Display booking details -->
         <div class="booking-summary" id="bookingSummary">            
             <div class="summary-body">
-                <p class="para">Your booking has been confirmed and an e-ticket has been sent to your email!</p>
+                <p class="para-sum">Your booking has been confirmed and an e-ticket has been sent to your email!</p>
                 <table class="booking-details-table">
                     <tr>
                         <th>Booking ID:</th>
@@ -61,12 +61,14 @@
                     </tr>
                 </table>
             </div>
-            <div class="summary-footer">
-                <p>Booking Date & Time: <span>${booking.paymentDate}</span></p>
-                <p>An e-ticket has been sent to: <span>${booking.userEmail}</span></p>
-                <p>
+            <div class="summary-footer row">
+                <div class="col-8">
+                    <p>Booking Date & Time: <span>${booking.paymentDate}</span></p>
+                    <p>E-ticket has been sent to: <span>${booking.userEmail}</span></p>
+                </div>
+                <div class="col-4"> 
                     <a href="./" class="button">Back to Home</a>
-                </p>
+                </div>
             </div>
         </div>
     </div>

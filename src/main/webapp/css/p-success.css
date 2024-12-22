@@ -1,7 +1,15 @@
 .para {
     font-size: 18px;
-    color: #555; /* Dark gray color for text */
+    color: var(--secondary); /* Dark gray color for text */
     text-align: center;
+    text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary);
+}
+
+.para-sum {
+    font-size: 18px;
+    color: #34495e; /* Dark gray color for text */
+    text-align: center;/*
+    text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green;*/
 }
 
 /* Strong text styles */
@@ -18,27 +26,35 @@ strong {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    float: right; /* Align the button to the right */
 }
 
 /* Button hover effect */
 .button:hover {
     background-color: var(--secondary);
     color: white;
-    transform: scale(1.05); /* Slightly enlarge the button */
+    transform: scale(1.1); /* Makes the button 10% bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
 }
 
 /* Button active effect */
 .button:active {
-    transform: scale(0.95); /* Slightly shrink the button on click */
+    transform: scale(1.1); /* Keeps the button slightly bigger */
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary); /* Glowing effect */
+    background-color: var(--secondary);
+    color: white;
 }
 
 /* Booking summary styles */
 .booking-summary {
     max-width: 800px;
     margin: 2rem auto;
-    /*padding: 2rem;*/
+    padding: 1rem;
     background: #fff;
+    opacity: 80%;
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 5); /* Adds a slight glow */
 }
 
 .summary-header {
@@ -76,14 +92,15 @@ strong {
     font-weight: 500;
 }
 
-.summary-footer {
-    margin-top: 2rem;
+.summary-footer a{
+    text-align: right; /* Aligns footer content to the right */
 }
 
 .summary-footer p {
     color: #7f8c8d;
     font-size: 0.9rem;
     margin: 0.5rem 0;
+    text-align: left;
 }
 
 .summary-footer span {
@@ -141,5 +158,13 @@ strong {
 
     .summary-body span {
         font-size: 1rem;
+    }
+
+    /* Ensure the button stays centered on small screens */
+    .button {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 }

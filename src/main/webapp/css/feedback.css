@@ -21,11 +21,30 @@
 .custom-textarea {
     resize: none;
     border-radius: 10px;
+    opacity: 70%;
 }
 .custom-textarea:focus {
     border-color: #000000;
     box-shadow: none;
 }
+.custom-btn {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.0s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.custom-btn:hover, .custom-btn:focus, .custom-btn:active {
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary);
+    transform: scale(1.1); /* Makes the button 10% bigger */
+}
+
+
+/*
 .custom-btn {
     background-color: var(--primary);
     border-color: var(--primary);
@@ -40,20 +59,180 @@
     font-size: 2rem;
     justify-content: center;
 }
-
+*/
 .star-rating input {
     display: none;
 }
-
+/*
 .star-rating label {
     cursor: pointer;
     color: #ccc;
     font-size: 2rem;
     padding: 0.1rem;
-}
+}*/
 
 .star-rating input:checked~label,
 .star-rating label:hover,
 .star-rating label:hover~label {
     color: #f5b301;
+}
+
+.radio {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row-reverse;
+}
+
+.radio > input {
+    position: absolute;
+    appearance: none;
+}
+
+.radio > label {
+    cursor: pointer;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.radio > label > svg {
+    fill: var(--primary);
+    transition: fill 0.3s ease;
+}
+
+.radio > label::before,
+.radio > label::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #ff9e0b;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+    animation: particle-explosion 1s ease-out;
+}
+
+.radio > label::before {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+}
+
+.radio > label::after {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+}
+
+.radio > label:hover::before,
+.radio > label:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.5);
+}
+
+.radio > label:hover {
+    transform: scale(1.2);
+    animation: pulse 0.6s infinite alternate;
+}
+
+.radio > label:hover > svg,
+.radio > label:hover ~ label > svg {
+    fill: #ff9e0b;
+    filter: drop-shadow(0 0 15px rgba(255, 158, 11, 0.9));
+    animation: shimmer 1s ease infinite alternate;
+}
+
+.radio > input:checked + label > svg,
+.radio > input:checked + label ~ label > svg {
+    fill: #ff9e0b;
+    filter: drop-shadow(0 0 15px rgba(255, 158, 11, 0.9));
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes particle-explosion {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(255, 158, 11, 0.5));
+    }
+    100% {
+        filter: drop-shadow(0 0 20px rgba(255, 158, 11, 1));
+    }
+}
+
+.radio > input:checked + label:hover > svg,
+.radio > input:checked + label:hover ~ label > svg {
+    fill: #e58e09;
+}
+
+.radio > label:hover > svg,
+.radio > label:hover ~ label > svg {
+    fill: #ff9e0b;
+}
+
+.radio input:checked ~ label svg {
+    fill: #ffa723;
+}
+
+.table {
+    opacity: 0.8; /* Reduce opacity to 80% */
+}
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    border: 1px solid #dee2e6; /* Add borders for table cells */
+}
+
+.table thead th {
+    border-bottom-width: 2px;
+}
+
+.table {
+    border: none; /* Remove the outer border of the table */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Slight glow effect */
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.table:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Enhance glow effect on hover */
+}
+
+/* Center text for Feedback ID and Rating columns */
+.table td:nth-child(1), .table td:nth-child(2),
+.table th:nth-child(1), .table th:nth-child(2) {
+    text-align: center;
 }

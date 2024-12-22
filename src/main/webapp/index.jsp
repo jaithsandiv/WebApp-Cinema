@@ -9,28 +9,54 @@
     <jsp:param name="activePage" value="home" />   
 </jsp:include> 
 
-<!-- Page specific content -->
+<!-- Page specific content 
 <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./images/slide1.png" class="d-block w-100" alt="...">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./images/slide1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./images/slide2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./images/slide3.png" class="d-block w-100" alt="...">
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="./images/slide2.png" class="d-block w-100" alt="...">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div-->
+<center>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide">
+                <img src="./images/slide1.png" alt="Slide 1">
+                <h2>Slide 1</h2>
+            </div>
+            <div class="slide">
+                <img src="./images/slide2.png" alt="Slide 2">
+                <h2>Slide 2</h2>
+            </div>
+            <div class="slide">
+                <img src="./images/slide3.png" alt="Slide 3">
+                <h2>Slide 3</h2>
+            </div>
+            <div class="slide">
+                <img src="./images/slide1.png" alt="Slide 4">
+                <h2>Slide 4</h2>
+            </div>
+            <div class="slide">
+                <img src="./images/slide2.png" alt="Slide 5">
+                <h2>Slide 5</h2>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="./images/slide3.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+</center>
 <br>
 <!-- Now Playing Movies -->
 <div>
@@ -41,16 +67,15 @@
         <c:forEach var="movie" items="${nowshow}">
             <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
-                    <div class="card">
-                        <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">${movie.genre}</p>
+                    <div class="movie-card">
+                        <img src="${empty movie.image_path ? './images/placeholder.png?height=600&width=400' : movie.image_path}" alt="${movie.title}">
+                        <div class="movie-info">
+                            <h5 class="mb-1">${movie.title}</h5>
+                            <p class="mb-0 small">${movie.genre}</p>
                         </div>
                     </div>
                 </a>
             </div>
-
         </c:forEach>
         <c:if test="${empty nowshow}">
             <p>No movies currently showing.</p>
@@ -68,15 +93,15 @@
         <c:forEach var="movie" items="${comingsoon}">
             <div class="col-md-3" style="padding-bottom: 20px;">
                 <a href="./information?movie_id=${movie.id}" class="card-link">
-                    <div class="card">
-                        <img src="${empty movie.image_path ? './images/placeholder.png' : movie.image_path}" class="card-img-top" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">${movie.genre}</p>
+                    <div class="movie-card">
+                        <img src="${empty movie.image_path ? './images/placeholder.png?height=600&width=400' : movie.image_path}" alt="${movie.title}">
+                        <div class="movie-info">
+                            <h5 class="mb-1">${movie.title}</h5>
+                            <p class="mb-0 small">${movie.genre}</p>
                         </div>
                     </div>
                 </a>
-            </div>      
+            </div>     
         </c:forEach>
         <c:if test="${empty nowshow}">
             <p>No upcoming movies.</p>
